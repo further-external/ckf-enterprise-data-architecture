@@ -3,6 +3,8 @@
 
 Welcome to the central repository for the Comfort Keepers Enterprise Data Architecture. This repository houses the code, infrastructure schemas, and governance policies for our Server-Side Tagging (sGTM) and Event-Driven Data Layer.
 
+
+
 ## 📖 How to Use This Repository
 
 This repository is designed to be read sequentially, mirroring the lifecycle of our data supply chain—from the user's browser (Input), to the cloud server (Processing), and finally to the business strategy (Governance).

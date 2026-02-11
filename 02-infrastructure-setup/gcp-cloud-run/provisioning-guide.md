@@ -1,4 +1,3 @@
-```markdown
 # Cloud Run Provisioning Guide
 ### Server-Side GTM Infrastructure Runbook
 

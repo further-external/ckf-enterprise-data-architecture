@@ -1223,7 +1223,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "value",
-                        "value": "EAAHbhPUqBZAkBAJUwjwDR4ZCt5O9AotpIk8LT9c5QooBrax2z2a97RbwbJAXuHiZCCZC3zEb7h3BKdHgeQWx2u4pb0DOv3BXScFwyRiLiRQqfmBKKuyaIP4to6IGc9ZAOwoZC3mifRf54Xc4weq0WaDdIyqge6kZCCvikSJSSSsqco5UCLMFAVS"
+                        "value": "<INSERT_SECURE_META_CAPI_TOKEN>"
                     }
                 ],
                 "fingerprint": "1769113132321",

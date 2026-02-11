@@ -1,0 +1,2370 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-01-22 19:31:30",
+    "containerVersion": {
+        "path": "accounts/122891826/containers/10430067/versions/0",
+        "accountId": "122891826",
+        "containerId": "10430067",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/122891826/containers/10430067",
+            "accountId": "122891826",
+            "containerId": "10430067",
+            "name": "PARENT CONTAINER - www.comfortkeepers.com",
+            "publicId": "GTM-MSGHFB4",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1581614731691",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/122891826/containers/10430067/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-MSGHFB4"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "tagId": "510",
+                "name": "Consent Mode | Update Consent Mode",
+                "type": "cvt_K8GSG",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ad_storage",
+                        "value": "{{OneTrust | 4-Targeting Enabled}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "ads_data_redaction",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendDataLayer",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ad_user_data",
+                        "value": "{{OneTrust | 4-Targeting Enabled}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "security_storage",
+                        "value": "denied"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "command",
+                        "value": "update"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "functionality_storage",
+                        "value": "{{OneTrust | 3-Functional Enabled}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "personalization_storage",
+                        "value": "denied"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "url_passthrough",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "analytics_storage",
+                        "value": "{{OneTrust | 2-Audience Measurement Enabled}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ad_personalization",
+                        "value": "{{OneTrust | 4-Targeting Enabled}}"
+                    }
+                ],
+                "fingerprint": "1709048684354",
+                "firingTriggerId": [
+                    "506"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "tagId": "513",
+                "name": "Consent Mode | Default Consent Mode",
+                "type": "cvt_K8GSG",
+                "notes": "The default state should always be set up with the assumption that OneTrust will fail to load. If it was to fail to load or is slow to load, what would we want the default behavior to be? \n\nWe leverage the regions option here to essentially mirror your default OneTrust settings. For example, if the defaults should be Opt-In for in EMEA and Opt-Out for Florida and split for California (yes for performance but no for targeting), then set that up here. You can read more about region options here: https://developers.google.com/tag-platform/devguides/consent#region-specific_behavior. If legal and the security team are ok with using a single global setting, then we can remove the conditionals here and just set a global default.\n\nThe wait_for_update parameter enables us to wait a certain period of time in the hopes that OneTrust will complete its asynchronous load and run the JS we need to determine consent state from it before firing initial beacons. This helps us in situations where we fire page_view or other similar page-load based events (view_item on PDPs for example) so that we don't prevent firing of those due to OneTrust being slow.",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "eea",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "wait_for_update",
+                        "value": "0"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendDataLayer",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "regions",
+                        "value": "all"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "command",
+                        "value": "default"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "functionality_storage",
+                        "value": "granted"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "url_passthrough",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ad_storage",
+                        "value": "granted"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "ads_data_redaction",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ad_user_data",
+                        "value": "granted"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "security_storage",
+                        "value": "denied"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "personalization_storage",
+                        "value": "denied"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "analytics_storage",
+                        "value": "granted"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ad_personalization",
+                        "value": "granted"
+                    }
+                ],
+                "fingerprint": "1718653453125",
+                "firingTriggerId": [
+                    "2147479572"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "tagId": "544",
+                "name": "Audioeye - All Pages",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script type=\"text/javascript\">!function(){var b=function(){window.__AudioEyeSiteHash = \"f2dcf08fb4e917ef6a4467ec4e584d35\"; var a=document.createElement(\"script\");a.src=\"https://wsmcdn.audioeye.com/aem.js\";a.type=\"text/javascript\";a.setAttribute(\"async\",\"\");document.getElementsByTagName(\"body\")[0].appendChild(a)};\"complete\"!==document.readyState?window.addEventListener?window.addEventListener(\"load\",b):window.attachEvent&&window.attachEvent(\"onload\",b):b()}();</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1710263716929",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "blockingTriggerId": [
+                    "545",
+                    "548"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NEEDED",
+                    "consentType": {
+                        "type": "LIST",
+                        "list": [
+                            {
+                                "type": "TEMPLATE",
+                                "value": "functionality_storage"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "10",
+                "name": "Page load - Home Recruiting Landing Page",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url path}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/home/recruiting"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173317924"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "11",
+                "name": "Page load - Assessment You Page",
+                "type": "DOM_READY",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*/home/quick-links/care-assessment.?(\\?.*)?$"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173356367"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "12",
+                "name": "Page load - All Pages - DOM Ready",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "gtm.dom"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173379271"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "13",
+                "name": "Page load - DL - Contact Us Thanks Push",
+                "type": "DOM_READY",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url path}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "contact-us"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173410380"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "14",
+                "name": "Page load - Form Impression Trigger",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url path}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*/contact-us.?(\\?.*)?$|.*/schedule-in-home-consultation.?(\\?.*)?$|.*/request-more-information.?(\\?.*)?$|.*/submit-a-resume.?(\\?.*)?$|.*/referrals.?(\\?.*)?$|.*/schedule-a-consultation.?(\\?.*)?$|.*care-assessment.?(\\?.*)?$|.*care-assessment.?(\\?.*)?$|.*nbf-employment-form.?(\\?.*)?$"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173445319"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "15",
+                "name": "Event - Contact Us Thank You",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "contact us thank you"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173466592"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "16",
+                "name": "Event - DL - In Home Consultation thank you trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "consultation thank you"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173485959"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "17",
+                "name": "Event - Request More Info Thank you",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "request info thank you"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173508449"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "18",
+                "name": "Event - Resume Thank You",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "resume thank you"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173536152"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "19",
+                "name": "Form - Assessment Form Submit",
+                "type": "FORM_SUBMISSION",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Form ID}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "surveyForm"
+                            }
+                        ]
+                    }
+                ],
+                "autoEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*care-assessment.?(\\?.*)?$"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "TEMPLATE"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "true"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1545173678432"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "20",
+                "name": "Form - In-Home Consultation Submit Trigger",
+                "type": "FORM_SUBMISSION",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{element id}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "contactForm"
+                            }
+                        ]
+                    }
+                ],
+                "autoEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*schedule-a-consultation.?(\\?.*)?$|.*schedule-in-home-consultation.?(\\?.*)?$"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "TEMPLATE"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "true"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1545173794168"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "21",
+                "name": "suppress unusual form",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/home/careers/contact-us"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173826034"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "22",
+                "name": "Page load - Homepage",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/.?(\\?.*)?$"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173893982"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "23",
+                "name": "Page load - DL - In-Home Consultation Push Trigger",
+                "type": "DOM_READY",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url path}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*/schedule-in-home-consultation.?(\\?.*)?$|.*/schedule-a-consultation.?(\\?.*)?$"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173926662"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "24",
+                "name": "Page load - Recruiting Thank You Page",
+                "type": "DOM_READY",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*nbf-employment-form.?(\\?.*)?$"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545173978327"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "25",
+                "name": "Page load - Referrals Page",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*referrals.?(\\?.*)?$"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545174014396"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "26",
+                "name": "Event - All Original Data Layer Events",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "\\.[0-9]$"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "negate",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545174064276"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "27",
+                "name": "Page load - DL - Request More Info Push",
+                "type": "DOM_READY",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url path}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "request-more-information"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545174111718"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "28",
+                "name": "Page load - Resume Submit",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url path}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*/submit-a-resume.?(\\?.*)?$"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545174168619"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "44",
+                "name": "Block - Iframe",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "www.comfortkeepers.com"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "negate",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1562003042831"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "45",
+                "name": "Accept Iframe",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "www.comfortkeepers.com"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1562002029775"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "46",
+                "name": "Event - Typeform Submit",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "TypeformSubmit"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1559695989891"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "47",
+                "name": "Event - typeform interaction",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "TypeformFirstInteraction"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1559696085673"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "48",
+                "name": "Typeform pages",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "ckfi.typeform.com"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1559696456463"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "49",
+                "name": "pageviews",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "pageview"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1560536370427"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "506",
+                "name": "Custom | OneTrustGroupsUpdated",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "OneTrustGroupsUpdated"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1656618133361"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "545",
+                "name": "Recruitment Pages",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "www.comfortkeepers.jobs"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1681496180657"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "triggerId": "548",
+                "name": "PV - Audioeye Off",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{QP - Audioeye Off}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*off.*"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "ignore_case",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1681917471351"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "1",
+                "name": "url path",
+                "type": "u",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "component",
+                        "value": "PATH"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "defaultPages"
+                    }
+                ],
+                "fingerprint": "1545173289516",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "2",
+                "name": "url",
+                "type": "u",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "component",
+                        "value": "URL"
+                    }
+                ],
+                "fingerprint": "1545173590916",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "3",
+                "name": "element id",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "ID"
+                    }
+                ],
+                "fingerprint": "1545173774844",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "31",
+                "name": "Choice Local Franchises",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () {\n  var franchises = [\n    'offices/alabama/opelika/',\n    'offices/alaska/anchorage/',\n    'offices/arkansas/el-dorado/',\n    'offices/arkansas/russellville/',\n    'offices/california/alameda/',\n    'offices/california/anaheim/',\n    'offices/california/beverly-hills/',\n    'offices/california/buena-park/',\n    'offices/california/burbank/',\n    'offices/california/citrus-heights/',\n    'offices/california/claremont/',\n    'offices/california/costa-mesa/',\n    'offices/california/fresno/',\n    'offices/california/grass-valley/',\n    'offices/california/huntington-beach/',\n    'offices/california/la-mirada/',\n    'offices/california/lancaster/',\n    'offices/california/livermore/',\n    'offices/california/lomita/',\n    'offices/california/long-beach/',\n    'offices/california/los-angeles/',\n    'offices/california/marysville/',\n    'offices/california/merced/',\n    'offices/california/modesto/',\n    'offices/california/orange/',\n    'offices/california/pasadena/',\n    'offices/california/pleasanton/',\n    'offices/california/sacramento-metro/',\n    'offices/california/sacramento-west/',\n    'offices/california/san-diego/',\n    'offices/california/san-jose/',\n    'offices/california/san-mateo/',\n    'offices/california/sonora/',\n    'offices/california/tracy/',\n    'offices/california/upland/',\n    'offices/california/vacaville/',\n    'offices/california/walnut-creek/',\n    'offices/california/west-la/',\n    'offices/california/woodland/',\n    'offices/colorado/delta-montrose/',\n    'offices/colorado/durango/',\n    'offices/colorado/grand-junction/',\n    'offices/colorado/south-denver/',\n    'offices/connecticut/bloomfield/',\n    'offices/connecticut/enfield/',\n    'offices/connecticut/madison/',\n    'offices/connecticut/wallingford/',\n    'offices/florida/altamonte-springs/',\n    'offices/florida/boynton-beach/',\n    'offices/florida/bradenton/',\n    'offices/florida/delray-beach/',\n    'offices/florida/gainesville/',\n    'offices/florida/hollywood/',\n    'offices/florida/jupiter/',\n    'offices/florida/lady-lake/',\n    'offices/florida/middleburg/',\n    'offices/florida/ocala/',\n    'offices/florida/port-orange/',\n    'offices/florida/sarasota/',\n    'offices/florida/stuart/',\n    'offices/florida/vero-beach/',\n    'offices/georgia/atlanta/',\n    'offices/georgia/blairsville/',\n    'offices/georgia/columbus/',\n    'offices/georgia/hiram/',\n    'offices/georgia/marietta/',\n    'offices/georgia/monroe/',\n    'offices/idaho/pocatello/',\n    'offices/idaho/ponderay/',\n    'offices/idaho/rupert/',\n    'offices/illinois/arlington-heights/',\n    'offices/illinois/elmhurst/',\n    'offices/illinois/palatine/',\n    'offices/indiana/new-albany/',\n    'offices/iowa/davenport/',\n    'offices/kansas/overland-park/',\n    'offices/kansas/salina/',\n    'offices/kansas/topeka/',\n    'offices/kentucky/cold-spring/',\n    'offices/kentucky/lexington/',\n    'offices/kentucky/louisville/',\n    'offices/louisiana/alexandria/',\n    'offices/louisiana/baton-rouge/',\n    'offices/louisiana/metairie/',\n    'offices/louisiana/shreveport/',\n    'offices/maine/kennebunk/',\n    'offices/maine/rockport/',\n    'offices/maine/scarborough/',\n    'offices/maine/topsham/',\n    'offices/maryland/annapolis/',\n    'offices/maryland/dunkirk/',\n    'offices/maryland/ellcott-city/',\n    'offices/massachusetts/woburn/resources/resources/understanding-seniors-and-malnutrition-in-woburn-massachusetts/',\n    'offices/michigan/ann-arbor/',\n    'offices/michigan/burton/',\n    'offices/michigan/charter-township-of-clinton/',\n    'offices/michigan/farmington-hills/',\n    'offices/michigan/holland/',\n    'offices/michigan/port-huron/',\n    'offices/michigan/rochester-hills/',\n    'offices/michigan/royal-oak/',\n    'offices/michigan/spring-lake/',\n    'offices/michigan/st-joseph/',\n    'offices/michigan/trenton/',\n    'offices/michigan/williamston/',\n    'offices/missouri/cape-girardeau/',\n    'offices/nevada/henderson/',\n    'offices/nevada/las-vegas/',\n    'offices/nevada/reno/',\n    'offices/new-jersey/bloomfield/',\n    'offices/new-jersey/north-bergen/',\n    'offices/new-jersey/parsippany/',\n    'offices/new-jersey/secaucus/',\n    'offices/new-mexico/las-cruces/',\n    'offices/new-york/centereach/',\n    'offices/new-york/peekskill/',\n    'offices/new-york/pittsford/',\n    'offices/new-york/rochester/',\n    'offices/new-york/syracuse/',\n    'offices/north-carolina/cary/',\n    'offices/north-carolina/charlotte/',\n    'offices/north-carolina/cornelius/',\n    'offices/north-carolina/durham/',\n    'offices/north-carolina/hickory/',\n    'offices/north-carolina/mooresville/',\n    'offices/north-carolina/salisbury/',\n    'offices/north-carolina/tryon/',\n    'offices/north-dakota/bismarck/',\n    'offices/ohio/bowling-green/',\n    'offices/ohio/centerville/',\n    'offices/ohio/east-cincinnati/',\n    'offices/ohio/hamilton/',\n    'offices/ohio/hilliard/',\n    'offices/ohio/lima/',\n    'offices/ohio/springfield/',\n    'offices/ohio/tiffin/',\n    'offices/ohio/west-chester-township/',\n    'offices/ohio/westerville/',\n    'offices/ohio/willard/',\n    'offices/pennsylvania/ambler/',\n    'offices/pennsylvania/berks-county-west-lawn/',\n    'offices/pennsylvania/bridgeville/',\n    'offices/pennsylvania/chadds-ford/',\n    'offices/pennsylvania/erie/',\n    'offices/pennsylvania/king-of-prussia/',\n    'offices/pennsylvania/lansdale/',\n    'offices/pennsylvania/limerick/',\n    'offices/pennsylvania/monroeville/',\n    'offices/pennsylvania/oreland/',\n    'offices/pennsylvania/pittsburgh-city/',\n    'offices/pennsylvania/state-college/',\n    'offices/pennsylvania/west-chester/',\n    'offices/pennsylvania/williamsport/',\n    'offices/rhode-island/lincoln/',\n    'offices/south-carolina/anderson/',\n    'offices/south-carolina/columbia/',\n    'offices/south-carolina/florence/',\n    'offices/south-carolina/greenville/',\n    'offices/south-carolina/johns-island/',\n    'offices/south-carolina/mt-pleasant/',\n    'offices/south-carolina/spartanburg/',\n    'offices/south-carolina/summerville/',\n    'offices/south-carolina/sumter/',\n    'offices/south-dakota/rapid-city/',\n    'offices/south-dakota/spearfish/',\n    'offices/tennessee/brentwood/',\n    'offices/tennessee/chattanooga/',\n    'offices/tennessee/convington/',\n    'offices/tennessee/covington/',\n    'offices/tennessee/jackson/',\n    'offices/tennessee/knoxville/',\n    'offices/tennessee/memphis/',\n    'offices/tennessee/nashville/',\n    'offices/texas/abilene/',\n    'offices/texas/mckinney/',\n    'offices/texas/nwhouston/',\n    'offices/texas/snyder/',\n    'offices/texas/sugar-land/',\n    'offices/utah/ogden/',\n    'offices/virginia/woodbridge/',\n    'offices/washington/bremerton/',\n    'offices/washington/lakewood/',\n    'offices/washington/olympia/',\n    'offices/washington/spokane/',\n    'offices/washington/tacoma/',\n    'offices/wisconsin/de-pere/',\n    'offices/wisconsin/fond-du-lac/',\n    'offices/wisconsin/grafton/',\n    'offices/wisconsin/la-crosse/',\n    'offices/wisconsin/milwaukee-east/',\n    'offices/wisconsin/racine/',\n    'offices/wisconsin/sheboygan/',\n    'offices/wisconsin/waukesha/',\n    'offices/pennsylvania/ardmore/',\n    'offices/florida/altamonte-springs/',\n    'offices/florida/port-orange/',\n    'offices/ohio/dublin/',\n    'offices/ohio/upper-arlington/',\n    'offices/ohio/toledo/',\n    'offices/michigan/monroe/',\n    'offices/arizona/chandler/',\n    'offices/virginia/fredericksburg/',\n    'offices/new-york/orchard-park/',\n    'offices/colorado/lakewood/',\n    'offices/wisconsin/milwaukee-northshore/'\n  ];\n\n  franchises.sort(); \n\n  var url = location.href.split('/')[3] + '/' + location.href.split('/')[4] + '/' + location.href.split('/')[5];\n  var urlNoParams = url.replace(/\\?.*/g, '') + '/';\n  return (franchises.includes(urlNoParams)) ? true : false;\n}"
+                    }
+                ],
+                "fingerprint": "1768512364892",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "32",
+                "name": "Silent Freeway Franchises",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () {\n  var franchises = [\n    'offices/california/monterey/',\n    'offices/colorado/denver/',\n    'offices/colorado/durango/',\n    'offices/delaware/new-castle/',\n    'offices/florida/niceville/',\n    'offices/florida/pensacola/',\n    'offices/maryland/towson/',\n    'offices/minnesota/stillwater/',\n    'offices/new-mexico/los-lunas/',\n    'offices/north-carolina/southern-pines/',\n    'offices/pennsylvania/york/',\n    'offices/south-carolina/summerville/',\n    'offices/texas/heb/',\n    'offices/texas/longview/',\n    'offices/texas/san-marcos/',\n    'offices/texas/tyler/',\n    'offices/texas/victoria/',\n    'offices/virginia/manassas/'\n  ];\n\n  franchises.sort();\n\n  var url = location.href.split('/')[3] + '/' + location.href.split('/')[4] + '/' + location.href.split('/')[5];\n  var urlNoParams = url.replace(/\\?.*/g, '') + '/';\n  return (franchises.includes(urlNoParams)) ? true : false;\n}"
+                    }
+                ],
+                "fingerprint": "1743709777586",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "33",
+                "name": "DigitalRDM Franchises",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () {\n  var franchises = [\n    'offices/alabama/birmingham/',\n    'offices/arizona/bullhead-city/',\n    'offices/arizona/flagstaff/',\n    'offices/arizona/fountain-hills/',\n    'offices/arizona/gold-canyon/',\n    'offices/arizona/lake-havasu/',\n    'offices/arizona/payson/',\n    'offices/arizona/phoenix/',\n    'offices/arizona/prescott/',\n    'offices/arizona/prescott-valley/',\n    'offices/arizona/scottsdale/',\n    'offices/arkansas/russellville/',\n    'offices/california/coronado/',\n    'offices/california/el-cajon/',\n    'offices/california/fremont/',\n    'offices/california/redlands/',\n    'offices/california/riverside/',\n    'offices/california/temecula/',\n    'offices/connecticut/bethel/',\n    'offices/connecticut/bloomfield/',\n    'offices/connecticut/milford/',\n    'offices/connecticut/shelton/',\n    'offices/connecticut/southbury/',\n    'offices/connecticut/west-hartford/',\n    'offices/connecticut/westport/',\n    'offices/florida/clermont/',\n    'offices/florida/davie/',\n    'offices/florida/fort-myers/',\n    'offices/florida/kissimmee/',\n    'offices/florida/pasco-county/',\n    'offices/florida/polk-county/',\n    'offices/florida/sebring/',\n    'offices/georgia/alpharetta/',\n    'offices/georgia/canton/',\n    'offices/georgia/cartersville/',\n    'offices/georgia/cumming/',\n    'offices/georgia/gainesville/',\n    'offices/illinois/naperville/',\n    'offices/illinois/peoria/',\n    'offices/illinois/springfield/',\n    'offices/indiana/la-porte/',\n    'offices/indiana/logansport/',\n    'offices/indiana/valparaiso/',\n    'offices/iowa/council-bluffs/',\n    'offices/iowa/davenport/',\n    'offices/kentucky/somerset/',\n    'offices/maine/damariscotta/',\n    'offices/maine/ellsworth/',\n    'offices/maine/scarborough/',\n    'offices/maryland/annapolis/',\n    'offices/maryland/columbia-ellicott-city/',\n    'offices/maryland/frederick/',\n    'offices/maryland/rockville/',\n    'offices/maryland/temple-hills/',\n    'offices/massachusetts/hyannis/',\n    'offices/massachusetts/newton/',\n    'offices/massachusetts/plymouth/',\n    'offices/massachusetts/stoneham/',\n    'offices/michigan/bay-city/',\n    'offices/michigan/brooklyn/',\n    'offices/michigan/farmington-hills/',\n    'offices/michigan/holland/',\n    'offices/michigan/howell/',\n    'offices/michigan/lansing/',\n    'offices/michigan/monroe/',\n    'offices/michigan/plymouth/',\n    'offices/michigan/portage/',\n    'offices/michigan/st-joseph/',\n    'offices/minnesota/moorhead/',\n    'offices/montana/kalispell/',\n    'offices/nebraska/omaha/',\n    'offices/new-hampshire/laconia/',\n    'offices/new-hampshire/plymouth/',\n    'offices/new-jersey/bridgewater/',\n    'offices/new-jersey/cherry-hill/',\n    'offices/new-jersey/edison/',\n    'offices/new-jersey/monroe-township/',\n    'offices/new-jersey/morristown/',\n    'offices/new-jersey/mountainside/',\n    'offices/new-jersey/pitman/',\n    'offices/new-jersey/robbinsville/',\n    'offices/new-jersey/rochelle-park/',\n    'offices/new-jersey/shrewsbury/',\n    'offices/new-jersey/toms-river/',\n    'offices/new-jersey/warren/',\n    'offices/new-mexico/carlsbad/',\n    'offices/new-mexico/roswell/',\n    'offices/new-mexico/santa-fe/',\n    'offices/new-york/pittsford/',\n    'offices/new-york/rochester/',\n    'offices/north-carolina/raleigh/',\n    'offices/north-dakota/fargo/',\n    'offices/north-dakota/grand-forks/',\n    'offices/ohio/akron/',\n    'offices/ohio/beachwood/',\n    'offices/ohio/bexley/',\n    'offices/ohio/brecksville/',\n    'offices/ohio/central-ohio/',\n    'offices/ohio/greater-cleveland/',\n    'offices/ohio/medina/',\n    'offices/ohio/painesville/',\n    'offices/ohio/perrysburg/',\n    'offices/ohio/westlake/',\n    'offices/oregon/bend/',\n    'offices/oregon/hillsboro-west-linn/',\n    'offices/oregon/portland/',\n    'offices/oregon/portland-east/',\n    'offices/oregon/salem/',\n    'offices/pennsylvania/allentown/',\n    'offices/pennsylvania/bethlehem/',\n    'offices/pennsylvania/bloomsburg/',\n    'offices/pennsylvania/cleona/',\n    'offices/pennsylvania/fayetteville/',\n    'offices/pennsylvania/fox-chapel/',\n    'offices/pennsylvania/hazleton/',\n    'offices/pennsylvania/jenkintown/',\n    'offices/pennsylvania/langhorne/',\n    'offices/pennsylvania/lehighton/',\n    'offices/pennsylvania/philadelphia/',\n    'offices/pennsylvania/pottsville/',\n    'offices/pennsylvania/quakertown/',\n    'offices/pennsylvania/scranton/',\n    'offices/pennsylvania/selinsgrove/',\n    'offices/pennsylvania/stroudsburg/',\n    'offices/pennsylvania/tunkhannock/',\n    'offices/pennsylvania/wilkes-barre/',\n    'offices/texas/austin-north/',\n    'offices/texas/austin-west/',\n    'offices/texas/bee-cave/',\n    'offices/texas/carrollton/',\n    'offices/texas/college-station/',\n    'offices/texas/georgetown/',\n    'offices/texas/katy/',\n    'offices/texas/lubbock/',\n    'offices/texas/san-angelo/',\n    'offices/texas/san-marcos/',\n    'offices/texas/waco/',\n    'offices/texas/west-central-houston/',\n    'offices/texas/woodlands/',\n    'offices/virginia/fredericksburg/',\n    'offices/washington/vancouver/',\n    'offices/wisconsin/madison/',\n    'offices/tennessee/jackson/',\n    'offices/arkansas/bentonville/',\n    'offices/kentucky/owensboro/',\n    'offices/north-carolina/franklin/',\n    'offices/georgia/blairsville/'\n  ];\n\n  franchises.sort(); \n\n  var url = location.href.split('/')[3] + '/' + location.href.split('/')[4] + '/' + location.href.split('/')[5];\n  var urlNoParams = url.replace(/\\?.*/g, '') + '/';\n  return (franchises.includes(urlNoParams)) ? true : false;\n}"
+                    }
+                ],
+                "fingerprint": "1766586143841",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "34",
+                "name": "GA Client ID",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "AST_ClientID"
+                    }
+                ],
+                "fingerprint": "1560964864449",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "35",
+                "name": "Webwrights Digital Franchise",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var franchises = [\n    'offices/illinois/tinley-park/',\n    'offices/indiana/granger/',\n    'offices/indiana/highland/',\n    'offices/missouri/chesterfield/',\n    'offices/ohio/perrysburg/',\n    'offices/wisconsin/madison/'\n  ];\n\n  franchises.sort();\n\n  var url = location.href.split('/')[3] + '/' + location.href.split('/')[4] + '/' + location.href.split('/')[5];\n  var urlNoParams = url.replace(/\\?.*/g, '') + '/';\n  return (franchises.includes(urlNoParams)) ? true : false;\n}"
+                    }
+                ],
+                "fingerprint": "1743709897385",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "36",
+                "name": "Ranking Carolina Franchises",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var franchises = [\n    'offices/north-carolina/calabash/',\n    'offices/south-carolina/columbia/',\n    'offices/south-carolina/florence/',\n    'offices/south-carolina/myrtle-beach/',\n    'offices/south-carolina/summerville/',\n    'offices/south-carolina/surfside-beach/'\n  ];\n\n  franchises.sort();\n\n  var url = location.href.split('/')[3] + '/' + location.href.split('/')[4] + '/' + location.href.split('/')[5];\n  var urlNoParams = url.replace(/\\?.*/g, '') + '/';\n  return (franchises.includes(urlNoParams)) ? true : false;\n}"
+                    }
+                ],
+                "fingerprint": "1743709734969",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "37",
+                "name": "Digital Support Franchises",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () {\n  var franchises = [\n    'offices/alabama/huntsville/',\n    'offices/california/arcadia/',\n    'offices/california/burbank/',\n    'offices/california/citrus-heights/',\n    'offices/california/laguna-niguel/',\n    'offices/california/modesto/',\n    'offices/california/monterey/',\n    'offices/california/palm-desert/',\n    'offices/california/sacramento-metro/',\n    'offices/california/sonora/',\n    'offices/california/temecula/',\n    'offices/california/thousand-oaks/',\n    'offices/california/tracy/',\n    'offices/california/west-la/',\n    'offices/colorado/boulder/',\n    'offices/colorado/castle-rock/',\n    'offices/colorado/centennial/',\n    'offices/colorado/colorado-springs/',\n    'offices/colorado/delta-montrose/',\n    'offices/colorado/denver/',\n    'offices/colorado/denver-central-park/',\n    'offices/colorado/denver-stapleton/',\n    'offices/colorado/grand-junction/',\n    'offices/colorado/south-denver/',\n    'offices/florida/brandon/',\n    'offices/florida/fort-lauderdale/',\n    'offices/florida/jacksonville/',\n    'offices/florida/oviedo/',\n    'offices/florida/panama-city/',\n    'offices/florida/sun-city-center/',\n    'offices/georgia/evens/',\n    'offices/georgia/johns-creek/',\n    'offices/idaho/boise/',\n    'offices/idaho/coeur-da-lene/',\n    'offices/idaho/eagle/',\n    'offices/idaho/twin-falls/',\n    'offices/illinois/bartlett/',\n    'offices/illinois/buffalo-grove/',\n    'offices/illinois/chicago/',\n    'offices/illinois/chicago-il/',\n    'offices/illinois/grayslake/',\n    'offices/illinois/crystal-lake/',\n    'offices/illinois/decatur/',\n    'offices/illinois/elgin/',\n    'offices/illinois/freeport/',\n    'offices/illinois/lake-forest/',\n    'offices/illinois/park-ridge/',\n    'offices/illinois/rockford/',\n    'offices/illinois/skokie/',\n    'offices/illinois/tinley-park/',\n    'offices/indiana/evansville/',\n    'offices/indiana/granger/',\n    'offices/indiana/highland/',\n    'offices/indiana/logansport/',\n    'offices/kansas/wichita/',\n    'offices/kentucky/lexington/',\n    'offices/maine/scarborough/',\n    'offices/maryland/baltimore/',\n    'offices/maryland/easton/',\n    'offices/maryland/frederick/',\n    'offices/maryland/salisbury/',\n    'offices/massachusetts/stoneham/',\n    'offices/michigan/bloomfield-hills/',\n    'offices/michigan/brooklyn/',\n    'offices/michigan/east-grand-rapids/',\n    'offices/michigan/farmington-hills/',\n    'offices/michigan/grand-rapids/',\n    'offices/michigan/howell/',\n    'offices/michigan/monroe/',\n    'offices/minnesota/anoka/',\n    'offices/minnesota/brainerd/',\n    'offices/minnesota/buffalo/',\n    'offices/minnesota/edina/',\n    'offices/minnesota/inver-grove-heights/',\n    'offices/minnesota/minnetonka/',\n    'offices/minnesota/osseo/',\n    'offices/minnesota/st-cloud/',\n    'offices/minnesota/twin-cities/',\n    'offices/minnesota/white-bear-lake/',\n    'offices/missouri/stl/',\n    'offices/nevada/las-vegas-nv/',\n    'offices/nevada/reno/',\n    'offices/new-jersey/closter/',\n    'offices/new-jersey/flemington/',\n    'offices/new-jersey/galloway/',\n    'offices/new-jersey/montclair/',\n    'offices/new-jersey/parsippany/',\n    'offices/new-mexico/albuquerque/',\n    'offices/new-mexico/santa-fe/',\n    'offices/new-york/ithaca/',\n    'offices/new-york/new-york-city/',\n    'offices/new-york/orchard-park/',\n    'offices/new-york/plainview/',\n    'offices/new-york/rochester/',\n    'offices/north-carolina/calabash/',\n    'offices/north-carolina/greensboro/',\n    'offices/north-carolina/southern-pines/',\n    'offices/north-carolina/tryon/',\n    'offices/north-carolina/wilmington/',\n    'offices/ohio/test-office/',\n    'offices/ohio/toledo/',\n    'offices/oklahoma/duncan/',\n    'offices/oklahoma/enid/',\n    'offices/oklahoma/oklahoma-city/',\n    'offices/oklahoma/tulsa/',\n    'offices/oregon/hillsboro-west-linn/',\n    'offices/oregon/portland-west/',\n    'offices/oregon/salem/',\n    'offices/pennsylvania/ambler/',\n    'offices/pennsylvania/limerick/',\n    'offices/pennsylvania/pittsburgh-north-and-west/',\n    'offices/pennsylvania/springfield/',\n    'offices/pennsylvania/state-college/',\n    'offices/pennsylvania/west-chester/',\n    'offices/south-carolina/columbia/',\n    'offices/south-carolina/florence/',\n    'offices/south-carolina/greenville/',\n    'offices/south-carolina/mt-pleasant/',\n    'offices/south-carolina/myrtle-beach/',\n    'offices/south-carolina/north-augusta/',\n    'offices/south-carolina/spartanburg/',\n    'offices/south-carolina/summerville/',\n    'offices/south-carolina/sumter/',\n    'offices/south-carolina/surfside-beach/',\n    'offices/texas/fort-worth/',\n    'offices/texas/heb/',\n    'offices/texas/parker-county/',\n    'offices/texas/san-marcos/',\n    'offices/texas/snyder/',\n    'offices/texas/trophy-club/',\n    'offices/virginia/franklin/',\n    'offices/washington/bremerton/',\n    'offices/washington/federal-way/',\n    'offices/washington/olympia/',\n    'offices/washington/spokane/',\n    'offices/washington/tacoma/',\n    'offices/washington/vancouver/',\n    'offices/wisconsin/eau-claire/',\n    'offices/wisconsin/hudson/',\n    'offices/wisconsin/la-crosse/',\n    'offices/wisconsin/madison/',\n    'offices/wisconsin/menomonie/',\n    'offices/wisconsin/milwaukee/',\n    'offices/california/upland/',\n    'offices/california/san-jose/',\n    'offices/tennessee/memphis/',\n    'offices/tennessee/covington/',\n    'offices/south-dakota/sioux-falls/',\n    'offices/indiana/anderson/',\n    'offices/colorado/lakewood/',\n    'offices/arkansas/little-rock/',\n    'offices/michigan/traverse-city/',\n    'offices/michigan/petoskey/',\n    'offices/arkansas/little-rock/',\n    'offices/florida/melbourne/',\n    'offices/wisconsin/fond-du-lac/',\n    'offices/ohio/marietta/',\n    'offices/virginia/herndon/',\n    'offices/virginia/winchester/',\n    'offices/virginia/alexandria/',\n    'offices/virginia/virginia-beach/',\n    'offices/virginia/sterling/',\n    'offices/maryland/cumberland/',\n    'offices/virginia/fairfax/',\n    'offices/maryland/dunkirk/',\n    'offices/colorado/colorado-springs-south/',\n    'offices/colorado/littleton/',\n    'offices/colorado/englewood/',\n    'offices/colorado/aurora/',\n    'offices/ohio/marietta/',\n    'offices/maryland/dunkirk/'\n  ];\n\n  franchises.sort();\n\n  var url = location.href.split('/')[3] + '/' + location.href.split('/')[4] + '/' + location.href.split('/')[5];\n  var urlNoParams = url.replace(/\\?.*/g, '') + '/';\n  return (franchises.includes(urlNoParams)) ? true : false;\n}"
+                    }
+                ],
+                "fingerprint": "1769106304608",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "507",
+                "name": "OneTrust | 2-Audience Measurement Enabled",
+                "type": "cvt_10430067_120",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "individualConsentOutput",
+                        "value": "consent_mode"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "selectedGroup",
+                        "value": "2"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "returnType",
+                        "value": "selected"
+                    }
+                ],
+                "fingerprint": "1718654659039",
+                "formatValue": {
+                    "convertUndefinedToValue": {
+                        "type": "TEMPLATE",
+                        "value": "granted"
+                    }
+                }
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "508",
+                "name": "OneTrust | Targeting Enabled",
+                "type": "cvt_10430067_120",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "individualConsentOutput",
+                        "value": "consent_mode"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "selectedGroup",
+                        "value": "4"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "returnType",
+                        "value": "selected"
+                    }
+                ],
+                "fingerprint": "1656618216225",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "509",
+                "name": "OneTrust | 1-Strictly Necessary Enabled",
+                "type": "cvt_10430067_120",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "individualConsentOutput",
+                        "value": "consent_mode"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "selectedGroup",
+                        "value": "1"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "returnType",
+                        "value": "selected"
+                    }
+                ],
+                "fingerprint": "1718654649941",
+                "formatValue": {
+                    "convertUndefinedToValue": {
+                        "type": "TEMPLATE",
+                        "value": "granted"
+                    }
+                }
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "511",
+                "name": "Consent Regions | US Opt-In",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "US-CA"
+                    }
+                ],
+                "fingerprint": "1656618133364",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "512",
+                "name": "Consent Regions | EU Countries",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "AT,BE,BG,HR,CY,CZ,DK,EE,FI,FR,DE,GR,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,GB"
+                    }
+                ],
+                "fingerprint": "1656618133364",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "547",
+                "name": "QP - Audioeye Off",
+                "type": "u",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "component",
+                        "value": "QUERY"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "queryKey",
+                        "value": "audioeye"
+                    }
+                ],
+                "fingerprint": "1681917432161",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "572",
+                "name": "OneTrust | 3-Functional Enabled",
+                "type": "cvt_10430067_120",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "individualConsentOutput",
+                        "value": "consent_mode"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "selectedGroup",
+                        "value": "3"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "returnType",
+                        "value": "selected"
+                    }
+                ],
+                "fingerprint": "1718654667328",
+                "formatValue": {
+                    "convertUndefinedToValue": {
+                        "type": "TEMPLATE",
+                        "value": "granted"
+                    }
+                }
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "573",
+                "name": "OneTrust | 4-Targeting Enabled",
+                "type": "cvt_10430067_120",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "individualConsentOutput",
+                        "value": "consent_mode"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "selectedGroup",
+                        "value": "4"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "returnType",
+                        "value": "selected"
+                    }
+                ],
+                "fingerprint": "1718654679116",
+                "formatValue": {
+                    "convertUndefinedToValue": {
+                        "type": "TEMPLATE",
+                        "value": "granted"
+                    }
+                }
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "590",
+                "name": "Wyred Insights Franchises",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var franchises = [\n    'offices/california/arcadia/',\n    'offices/california/burbank/',\n    'offices/california/citrus-heights/',\n    'offices/california/modesto/',\n    'offices/california/palm-desert/',\n    'offices/california/sacramento-metro/',\n    'offices/california/san-jose/',\n    'offices/california/sonora/',\n    'offices/california/stockton/',\n    'offices/california/upland/',\n    'offices/colorado/denver/',\n    'offices/maryland/baltimore/',\n    'offices/nevada/las-vegas-nv/',\n    'offices/nevada/reno/',\n    'offices/new-york/new-york-city/',\n    'offices/washington/federal-way/',\n    'offices/washington/olympia/',\n    'offices/washington/spokane/',\n    'offices/wisconsin/milwaukee/',\n    'offices/california/milpitas/'\n  ];\n\n  franchises.sort();\n\n  var url = location.href.split('/')[3] + '/' + location.href.split('/')[4] + '/' + location.href.split('/')[5];\n  var urlNoParams = url.replace(/\\?.*/g, '') + '/';\n  return (franchises.includes(urlNoParams)) ? true : false;\n}"
+                    }
+                ],
+                "fingerprint": "1747936423600",
+                "formatValue": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "variableId": "591",
+                "name": "RightOn Interactive Franchises",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var franchises = [\n    'offices/north-carolina/tryon/',\n    'offices/oklahoma/duncan/',\n    'offices/oklahoma/enid/',\n    'offices/oklahoma/oklahoma-city/',\n    'offices/oklahoma/tulsa/',\n    'offices/south-carolina/greenville/',\n    'offices/south-carolina/spartanburg/',\n    'offices/texas/fort-worth/',\n    'offices/texas/heb/',\n    'offices/texas/parker-county/',\n    'offices/texas/trophy-club/',\n    'offices/pennsylvania/jenkintown/',\n    'offices/pennsylvania/philadelphia/',\n    'offices/kentucky/lexington/',\n    'offices/texas/snyder/',\n    'offices/south-carolina/anderson/',\n    'offices/north-carolina/shelby/',\n    'offices/north-carolina/greensboro/'\n  ];\n\n  franchises.sort(); \n\n  var url = location.href.split('/')[3] + '/' + location.href.split('/')[4] + '/' + location.href.split('/')[5];\n  var urlNoParams = url.replace(/\\?.*/g, '') + '/';\n  return (franchises.includes(urlNoParams)) ? true : false;\n}"
+                    }
+                ],
+                "fingerprint": "1760637576370",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "type": "FORM_ID",
+                "name": "Form ID"
+            }
+        ],
+        "fingerprint": "1769110290474",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/122891826/containers/10430067/versions/0?apiLink=version",
+        "zone": [
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "5",
+                "name": "Further | Digital Marketing",
+                "fingerprint": "1743710337301",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-N4W3MLB",
+                        "nickname": "Further | Digital Marketing"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "MATCH_REGEX",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{Page Hostname}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "typeform"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "true"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "6",
+                "name": "Further | Analytics",
+                "fingerprint": "1743710313559",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-TR7MGKP",
+                        "nickname": "Further | Analytics"
+                    }
+                ],
+                "boundary": {},
+                "typeRestriction": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "7",
+                "name": "Choice Local 1",
+                "fingerprint": "1751300656225",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-5BZSCPH",
+                        "nickname": "Choice Local 1"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "EQUALS",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{Choice Local Franchises}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "true"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "false"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {
+                    "enable": true,
+                    "whitelistedTypeId": [
+                        "flc",
+                        "fls",
+                        "adm",
+                        "gclidw",
+                        "ga",
+                        "cloud_retail",
+                        "awud",
+                        "gfct",
+                        "gaawe",
+                        "sp",
+                        "ts",
+                        "googtag",
+                        "lia_wsri",
+                        "ua",
+                        "opt",
+                        "awct",
+                        "gcs",
+                        "gfpa",
+                        "awcc",
+                        "ac360",
+                        "automl",
+                        "ehl",
+                        "sdl",
+                        "cl",
+                        "ytl",
+                        "hl",
+                        "fsl",
+                        "lcl",
+                        "evl",
+                        "tg",
+                        "tl",
+                        "jel",
+                        "ecl",
+                        "vis",
+                        "c",
+                        "d",
+                        "e",
+                        "f",
+                        "j",
+                        "k",
+                        "r",
+                        "u",
+                        "v",
+                        "ev",
+                        "cid",
+                        "aev",
+                        "smm",
+                        "ctv",
+                        "gtcs",
+                        "gtes",
+                        "uv",
+                        "gas",
+                        "remm",
+                        "awec",
+                        "dbg",
+                        "html"
+                    ]
+                }
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "29",
+                "name": "Silentfreeway",
+                "fingerprint": "1551726822278",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-NF8X23H",
+                        "nickname": "Silentfreeway"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "EQUALS",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{Silent Freeway Franchises}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "true"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "false"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "30",
+                "name": "DigitalRDM",
+                "fingerprint": "1551728409439",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-MKGQQTR",
+                        "nickname": "DigitalRDM"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "EQUALS",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{DigitalRDM Franchises}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "true"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "false"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "42",
+                "name": "CKFI Digital Support",
+                "fingerprint": "1570114953899",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-5NFFBTS",
+                        "nickname": "CKFI Digital Support"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "EQUALS",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{Digital Support Franchises}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "true"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "false"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "57",
+                "name": "Choice Local 2",
+                "fingerprint": "1568924038277",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-PLFF7KS",
+                        "nickname": "Choice Local 2"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "EQUALS",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{Choice Local Franchises}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "true"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "false"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "68",
+                "name": "Choice Local 3",
+                "fingerprint": "1570554957435",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-TVR2X63",
+                        "nickname": "CHILD ZONE - Choice Local 3"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "EQUALS",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{Choice Local Franchises}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "true"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "false"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {
+                    "enable": true,
+                    "whitelistedTypeId": [
+                        "googtag",
+                        "awct",
+                        "gaawe",
+                        "gcs",
+                        "awcc",
+                        "ac360",
+                        "flc",
+                        "sp",
+                        "fls",
+                        "ts",
+                        "ua",
+                        "gfct",
+                        "automl",
+                        "adm",
+                        "opt",
+                        "gclidw",
+                        "ga",
+                        "hl",
+                        "sdl",
+                        "fsl",
+                        "cl",
+                        "tg",
+                        "tl",
+                        "ecl",
+                        "jel",
+                        "ytl",
+                        "lcl",
+                        "evl",
+                        "vis",
+                        "ctv",
+                        "remm",
+                        "smm",
+                        "c",
+                        "d",
+                        "e",
+                        "f",
+                        "j",
+                        "k",
+                        "r",
+                        "u",
+                        "v",
+                        "uv",
+                        "dbg",
+                        "ev",
+                        "cid",
+                        "aev",
+                        "gas",
+                        "html",
+                        "crto",
+                        "k50Init",
+                        "sca",
+                        "bzi",
+                        "uspt",
+                        "okt",
+                        "yieldify",
+                        "dstag",
+                        "cts",
+                        "mpm",
+                        "baut",
+                        "bsa",
+                        "pijs",
+                        "bb",
+                        "omc",
+                        "nudge",
+                        "abtGeneric",
+                        "ta",
+                        "tc",
+                        "sfc",
+                        "svw",
+                        "xpsh",
+                        "sfl",
+                        "infinity",
+                        "asp",
+                        "ll",
+                        "messagemate",
+                        "qca",
+                        "uslt",
+                        "twitter_website_tag",
+                        "ndcr",
+                        "mf",
+                        "qcm",
+                        "ela",
+                        "vei",
+                        "ms",
+                        "scjs",
+                        "ljs",
+                        "hjtc",
+                        "pntr",
+                        "fxm",
+                        "awc",
+                        "cegg",
+                        "pa",
+                        "shareaholic",
+                        "tdc",
+                        "pc",
+                        "awj",
+                        "csm",
+                        "m6d",
+                        "scp",
+                        "veip",
+                        "mpr",
+                        "qpx",
+                        "placedPixel",
+                        "vdc",
+                        "sfr",
+                        "img",
+                        "tdlc",
+                        "tpdpx",
+                        "tdsc",
+                        "jsm"
+                    ]
+                }
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "72",
+                "name": "Choice Local 4",
+                "fingerprint": "1572012697785",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-TGT99RF",
+                        "nickname": "CHILD ZONE - Choice Local 4"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "EQUALS",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{Choice Local Franchises}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "true"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "false"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {
+                    "enable": true,
+                    "whitelistedTypeId": [
+                        "googtag",
+                        "awct",
+                        "gaawe",
+                        "gcs",
+                        "awcc",
+                        "ac360",
+                        "flc",
+                        "sp",
+                        "fls",
+                        "ts",
+                        "ua",
+                        "gfct",
+                        "automl",
+                        "adm",
+                        "opt",
+                        "gclidw",
+                        "ga",
+                        "hl",
+                        "sdl",
+                        "fsl",
+                        "cl",
+                        "tg",
+                        "tl",
+                        "ecl",
+                        "jel",
+                        "ytl",
+                        "lcl",
+                        "evl",
+                        "vis",
+                        "ctv",
+                        "remm",
+                        "smm",
+                        "c",
+                        "d",
+                        "e",
+                        "f",
+                        "j",
+                        "k",
+                        "r",
+                        "u",
+                        "v",
+                        "uv",
+                        "dbg",
+                        "ev",
+                        "cid",
+                        "aev",
+                        "gas",
+                        "jsm",
+                        "crto",
+                        "k50Init",
+                        "sca",
+                        "bzi",
+                        "uspt",
+                        "okt",
+                        "yieldify",
+                        "dstag",
+                        "cts",
+                        "mpm",
+                        "baut",
+                        "bsa",
+                        "pijs",
+                        "bb",
+                        "omc",
+                        "nudge",
+                        "abtGeneric",
+                        "ta",
+                        "tc",
+                        "sfc",
+                        "svw",
+                        "xpsh",
+                        "sfl",
+                        "infinity",
+                        "asp",
+                        "ll",
+                        "messagemate",
+                        "qca",
+                        "uslt",
+                        "twitter_website_tag",
+                        "ndcr",
+                        "mf",
+                        "qcm",
+                        "html",
+                        "ela",
+                        "vei",
+                        "ms",
+                        "scjs",
+                        "ljs",
+                        "hjtc",
+                        "pntr",
+                        "fxm",
+                        "awc",
+                        "cegg",
+                        "pa",
+                        "shareaholic",
+                        "tdc",
+                        "pc",
+                        "awj",
+                        "csm",
+                        "m6d",
+                        "scp",
+                        "veip",
+                        "mpr",
+                        "qpx",
+                        "placedPixel",
+                        "vdc",
+                        "sfr",
+                        "img",
+                        "tdlc",
+                        "tpdpx",
+                        "tdsc"
+                    ]
+                }
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "528",
+                "name": "Recruitment Site",
+                "fingerprint": "1671062683541",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-PRXXK9M",
+                        "nickname": "Recruitment Site Container"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "MATCH_REGEX",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{Page Hostname}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "recruitment-site.herokuapp.com|www.comfortkeepers.jobs"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "false"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "586",
+                "name": "DigitalRDM - 2",
+                "fingerprint": "1743710358697",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-TKRC5Q5L",
+                        "nickname": "DigitalRDM - 2"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "EQUALS",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{DigitalRDM Franchises}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "true"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "false"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "593",
+                "name": "Wyred Insights",
+                "fingerprint": "1743710574688",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-MRB5SMDR",
+                        "nickname": "Wyred Insights"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "EQUALS",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{Wyred Insights Franchises}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "true"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "false"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {}
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "zoneId": "594",
+                "name": "RightOn Interactive",
+                "fingerprint": "1743710555973",
+                "childContainer": [
+                    {
+                        "publicId": "GTM-PMTCG38H",
+                        "nickname": "RightOn Interactive"
+                    }
+                ],
+                "boundary": {
+                    "condition": [
+                        {
+                            "type": "EQUALS",
+                            "parameter": [
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg0",
+                                    "value": "{{RightOn Interactive Franchises}}"
+                                },
+                                {
+                                    "type": "TEMPLATE",
+                                    "key": "arg1",
+                                    "value": "true"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "negate",
+                                    "value": "false"
+                                },
+                                {
+                                    "type": "BOOLEAN",
+                                    "key": "ignore_case",
+                                    "value": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "typeRestriction": {}
+            }
+        ],
+        "customTemplate": [
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "templateId": "119",
+                "name": "Consent Mode (Google + Microsoft tags)",
+                "fingerprint": "1758217086785",
+                "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_K8GSG\",\n  \"__wm\": \"VGVtcGFsdGUtQXV0aG9yX0NvbnNlbnRNb2RlLVNpbW8tQWhhdmE\\u003d\",\n  \"version\": 1,\n  \"displayName\": \"Consent Mode (Google + Microsoft tags)\",\n  \"categories\": [\n    \"UTILITY\",\n    \"ANALYTICS\",\n    \"ADVERTISING\"\n  ],\n  \"brand\": {\n    \"id\": \"github.com_gtm-templates-simo-ahava\",\n    \"displayName\": \"gtm-templates-simo-ahava\",\n    \"thumbnail\": \"data:image/png;base64,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\\u003d\\u003d\"\n  },\n  \"description\": \"Adjust tag behavior based on consent. This template utilizes the Consent API and can be used to adjust how Microsoft and Google\\u0027s advertising tools use cookies and process ad identifiers.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ]\n}\n\n\n___TEMPLATE_PARAMETERS___\n\n[\n  {\n    \"type\": \"SELECT\",\n    \"name\": \"command\",\n    \"displayName\": \"Consent Command\",\n    \"selectItems\": [\n      {\n        \"value\": \"default\",\n        \"displayValue\": \"Default\"\n      },\n      {\n        \"value\": \"update\",\n        \"displayValue\": \"Update\"\n      }\n    ],\n    \"simpleValueType\": true,\n    \"help\": \"\\u003cstrong\\u003eDefault\\u003c/strong\\u003e means that you establish consent settings the site falls back on until such a time that the Update command is executed. You can have multiple Default tags on the page, each corresponding to a different region, for example.\\n\\u003cstrong\\u003eUpdate\\u003c/strong\\u003e is what you\\u0027d use once you\\u0027ve retrieved a consent status from the user.\",\n    \"defaultValue\": \"default\",\n    \"alwaysInSummary\": true\n  },\n  {\n    \"type\": \"TEXT\",\n    \"name\": \"wait_for_update\",\n    \"displayName\": \"Wait for Update\",\n    \"simpleValueType\": true,\n    \"valueUnit\": \"milliseconds\",\n    \"defaultValue\": 0,\n    \"help\": \"How long to wait (in milliseconds) for an \\u003cstrong\\u003eUpdate\\u003c/strong\\u003e command before firing Google tags that have been queued up.\",\n    \"enablingConditions\": [\n      {\n        \"paramName\": \"command\",\n        \"paramValue\": \"default\",\n        \"type\": \"EQUALS\"\n      }\n    ],\n    \"valueValidators\": [\n      {\n        \"type\": \"NON_NEGATIVE_NUMBER\"\n      }\n    ]\n  },\n  {\n    \"type\": \"CHECKBOX\",\n    \"name\": \"eea\",\n    \"checkboxText\": \"Include EEA regions\",\n    \"simpleValueType\": true,\n    \"help\": \"Check this box to apply this tag only to visitors from the European Economic Area.\",\n    \"defaultValue\": false,\n    \"enablingConditions\": [\n      {\n        \"paramName\": \"command\",\n        \"paramValue\": \"default\",\n        \"type\": \"EQUALS\"\n      }\n    ]\n  },\n  {\n    \"type\": \"TEXT\",\n    \"name\": \"regions\",\n    \"displayName\": \"Regions\",\n    \"simpleValueType\": true,\n    \"defaultValue\": \"all\",\n    \"help\": \"Apply this setting to users from these \\u003ca href\\u003d\\\"https://en.wikipedia.org/wiki/ISO_3166-2\\\"\\u003eregions\\u003c/a\\u003e (provide a comma-separated list). If you type \\u003cstrong\\u003eall\\u003c/strong\\u003e, the setting will apply to all users. If you type \\u003cstrong\\u003eeea\\u003c/strong\\u003e as one of the regions, the tag will automatically include all European Economic Area regions as geographical targets for this command.\",\n    \"enablingConditions\": [\n      {\n        \"paramName\": \"eea\",\n        \"paramValue\": false,\n        \"type\": \"EQUALS\"\n      }\n    ],\n    \"valueValidators\": [\n      {\n        \"type\": \"NON_EMPTY\",\n        \"errorMessage\": \"Set to \\\"all\\\" for all regions or add a comma-separated list of regions.\"\n      }\n    ]\n  },\n  {\n    \"type\": \"TEXT\",\n    \"name\": \"regionsEEA\",\n    \"displayName\": \"Regions\",\n    \"simpleValueType\": true,\n    \"defaultValue\": \"eea\",\n    \"help\": \"Apply this setting to users from these \\u003ca href\\u003d\\\"https://en.wikipedia.org/wiki/ISO_3166-2\\\"\\u003eregions\\u003c/a\\u003e (provide a comma-separated list). If you type \\u003cstrong\\u003eall\\u003c/strong\\u003e, the setting will apply to all users. If you type \\u003cstrong\\u003eeea\\u003c/strong\\u003e as one of the regions, the tag will automatically include all European Economic Area regions as geographical targets for this command.\",\n    \"enablingConditions\": [\n      {\n        \"paramName\": \"eea\",\n        \"paramValue\": true,\n        \"type\": \"EQUALS\"\n      }\n    ],\n    \"valueValidators\": [\n      {\n        \"type\": \"NON_EMPTY\",\n        \"errorMessage\": \"Set to \\\"all\\\" for all regions or add a comma-separated list of regions.\"\n      }\n    ]\n  },\n  {\n    \"type\": \"CHECKBOX\",\n    \"name\": \"platform_microsoft\",\n    \"checkboxText\": \"Enable Microsoft Consent Mode (Clarity + Bing)\",\n    \"simpleValueType\": true,\n    \"alwaysInSummary\": false,\n    \"defaultValue\": false,\n    \"help\": \"If checked, this tag also sets consent signals for Clarity and Bing.\"\n  },\n  {\n    \"type\": \"GROUP\",\n    \"name\": \"settings\",\n    \"displayName\": \"Consent Settings\",\n    \"groupStyle\": \"ZIPPY_OPEN\",\n    \"subParams\": [\n      {\n        \"type\": \"GROUP\",\n        \"name\": \"require_both\",\n        \"displayName\": \"Required for Microsoft and Google services\",\n        \"groupStyle\": \"NO_ZIPPY\",\n        \"subParams\": [\n          {\n            \"type\": \"SELECT\",\n            \"name\": \"ad_storage\",\n            \"displayName\": \"ad_storage\",\n            \"macrosInSelect\": true,\n            \"selectItems\": [\n              {\n                \"value\": \"granted\",\n                \"displayValue\": \"granted\"\n              },\n              {\n                \"value\": \"denied\",\n                \"displayValue\": \"denied\"\n              },\n              {\n                \"value\": \"notset\",\n                \"displayValue\": \"Not set\"\n              }\n            ],\n            \"simpleValueType\": true,\n            \"defaultValue\": \"denied\",\n            \"help\": \"If set to \\u003cstrong\\u003edenied\\u003c/strong\\u003e, Google and Microsoft\\u0027s tags and pixels will not be able to read or write first-party cookies. The use of third-party cookies is limited to only spam and fraud detection purposes. \\u003ca href\\u003d\\\"https://support.google.com/analytics/answer/9976101#behavior\\\"\\u003eMore information\\u003c/a\\u003e.\"\n          },\n          {\n            \"type\": \"SELECT\",\n            \"name\": \"analytics_storage\",\n            \"displayName\": \"analytics_storage\",\n            \"macrosInSelect\": true,\n            \"selectItems\": [\n              {\n                \"value\": \"granted\",\n                \"displayValue\": \"granted\"\n              },\n              {\n                \"value\": \"denied\",\n                \"displayValue\": \"denied\"\n              },\n              {\n                \"value\": \"notset\",\n                \"displayValue\": \"Not set\"\n              }\n            ],\n            \"simpleValueType\": true,\n            \"defaultValue\": \"denied\",\n            \"help\": \"If set to \\u003cstrong\\u003edenied\\u003c/strong\\u003e, Google Analytics and Microsoft Clarity tags will not read or write analytics cookies, and data collected to Google Analytics will not utilize persistent cookie identifiers (the identifiers are reset with every page load). \\u003ca href\\u003d\\\"https://support.google.com/analytics/answer/9976101#behavior\\\"\\u003eMore information\\u003c/a\\u003e.\"\n          }\n        ]\n      },\n      {\n        \"type\": \"GROUP\",\n        \"name\": \"required_google\",\n        \"displayName\": \"Required for Google services\",\n        \"groupStyle\": \"NO_ZIPPY\",\n        \"subParams\": [\n          {\n            \"type\": \"SELECT\",\n            \"name\": \"ad_user_data\",\n            \"displayName\": \"ad_user_data\",\n            \"macrosInSelect\": true,\n            \"selectItems\": [\n              {\n                \"value\": \"granted\",\n                \"displayValue\": \"granted\"\n              },\n              {\n                \"value\": \"denied\",\n                \"displayValue\": \"denied\"\n              },\n              {\n                \"value\": \"notset\",\n                \"displayValue\": \"Not set\"\n              }\n            ],\n            \"simpleValueType\": true,\n            \"defaultValue\": \"denied\",\n            \"help\": \"If set to \\u003cstrong\\u003edenied\\u003c/strong\\u003e, user data cannot be used with Google\\u0027s advertising solutions for audience building.\"\n          },\n          {\n            \"type\": \"SELECT\",\n            \"name\": \"ad_personalization\",\n            \"displayName\": \"ad_personalization\",\n            \"macrosInSelect\": true,\n            \"selectItems\": [\n              {\n                \"value\": \"granted\",\n                \"displayValue\": \"granted\"\n              },\n              {\n                \"value\": \"denied\",\n                \"displayValue\": \"denied\"\n              },\n              {\n                \"value\": \"notset\",\n                \"displayValue\": \"Not set\"\n              }\n            ],\n            \"simpleValueType\": true,\n            \"defaultValue\": \"denied\",\n            \"help\": \"If set to \\u003cstrong\\u003edenied\\u003c/strong\\u003e, data collected on this website will not be used for remarketing in Google\\u0027s advertising solutions.\"\n          }\n        ]\n      },\n      {\n        \"type\": \"GROUP\",\n        \"name\": \"optional\",\n        \"displayName\": \"Other signals\",\n        \"groupStyle\": \"NO_ZIPPY\",\n        \"subParams\": [\n          {\n            \"type\": \"SELECT\",\n            \"name\": \"personalization_storage\",\n            \"displayName\": \"personalization_storage\",\n            \"macrosInSelect\": true,\n            \"selectItems\": [\n              {\n                \"value\": \"granted\",\n                \"displayValue\": \"granted\"\n              },\n              {\n                \"value\": \"denied\",\n                \"displayValue\": \"denied\"\n              },\n              {\n                \"value\": \"notset\",\n                \"displayValue\": \"Not set\"\n              }\n            ],\n            \"simpleValueType\": true,\n            \"defaultValue\": \"denied\"\n          },\n          {\n            \"type\": \"SELECT\",\n            \"name\": \"functionality_storage\",\n            \"displayName\": \"functionality_storage\",\n            \"macrosInSelect\": true,\n            \"selectItems\": [\n              {\n                \"value\": \"granted\",\n                \"displayValue\": \"granted\"\n              },\n              {\n                \"value\": \"denied\",\n                \"displayValue\": \"denied\"\n              },\n              {\n                \"value\": \"notset\",\n                \"displayValue\": \"Not set\"\n              }\n            ],\n            \"simpleValueType\": true,\n            \"defaultValue\": \"denied\"\n          },\n          {\n            \"type\": \"SELECT\",\n            \"name\": \"security_storage\",\n            \"displayName\": \"security_storage\",\n            \"macrosInSelect\": true,\n            \"selectItems\": [\n              {\n                \"value\": \"granted\",\n                \"displayValue\": \"granted\"\n              },\n              {\n                \"value\": \"denied\",\n                \"displayValue\": \"denied\"\n              },\n              {\n                \"value\": \"notset\",\n                \"displayValue\": \"Not set\"\n              }\n            ],\n            \"simpleValueType\": true,\n            \"defaultValue\": \"denied\"\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"type\": \"GROUP\",\n    \"name\": \"other\",\n    \"displayName\": \"Other Settings\",\n    \"groupStyle\": \"ZIPPY_OPEN\",\n    \"subParams\": [\n      {\n        \"type\": \"CHECKBOX\",\n        \"name\": \"url_passthrough\",\n        \"checkboxText\": \"Pass Ad Click Information Through URLs (url_passthrough)\",\n        \"simpleValueType\": true,\n        \"help\": \"Check this if you want internal links to pass advertising identifiers (\\u003cstrong\\u003egclid\\u003c/strong\\u003e, \\u003cstrong\\u003edclid\\u003c/strong\\u003e, \\u003cstrong\\u003egclsrc\\u003c/strong\\u003e, \\u003cstrong\\u003e_gl\\u003c/strong\\u003e, \\u003cstrong\\u003ewbraid\\u003c/strong\\u003e) in the link URL while waiting for consent to be granted. \\u003ca href\\u003d\\\"https://developers.google.com/tag-platform/security/guides/consent#passthroughs\\\"\\u003eRead more here\\u003c/a\\u003e.\"\n      },\n      {\n        \"type\": \"CHECKBOX\",\n        \"name\": \"ads_data_redaction\",\n        \"checkboxText\": \"Redact Ads Data (ads_data_redaction)\",\n        \"simpleValueType\": true,\n        \"help\": \"If this is checked \\u003cstrong\\u003eand\\u003c/strong\\u003e ad_storage consent status is \\u003cstrong\\u003edenied\\u003c/strong\\u003e, Google\\u0027s advertising tags will drop all advertising identifiers from the requests, and traffic will be routed through cookieless domains.\"\n      },\n      {\n        \"type\": \"CHECKBOX\",\n        \"name\": \"sendDataLayer\",\n        \"checkboxText\": \"Push dataLayer Event\",\n        \"simpleValueType\": true,\n        \"help\": \"When consent is set to \\\"default\\\", a dataLayer event with \\u003cstrong\\u003eevent: \\u0027gtm_consent_default\\u0027\\u003c/strong\\u003e is sent, together with all the consent states. When an \\\"update\\\" is fired, a dataLayer event with \\u003cstrong\\u003eevent: \\u0027gtm_consent_update\\u0027\\u003c/strong\\u003e is pushed together with details about the updated consent state.\"\n      }\n    ]\n  }\n]\n\n\n___SANDBOXED_JS_FOR_WEB_TEMPLATE___\n\nconst callInWindow = require('callInWindow');\nconst copyFromWindow = require('copyFromWindow');\nconst createQueue = require('createQueue');\nconst dataLayerPush = require('createQueue')('dataLayer');\nconst gtagSet = require('gtagSet');\nconst log = require('logToConsole');\nconst makeNumber = require('makeNumber');\nconst makeTableMap = require('makeTableMap');\nconst setDefaultConsentState = require('setDefaultConsentState');\nconst setInWindow = require('setInWindow');\nconst updateConsentState = require('updateConsentState');\n\nconst eeaRegions = [\n  \"AT\",\n  \"BE\",\n  \"BG\",\n  \"HR\",\n  \"CY\",\n  \"CZ\",\n  \"DK\",\n  \"EE\",\n  \"FI\",\n  \"FR\",\n  \"DE\",\n  \"GR\",\n  \"HU\",\n  \"IE\",\n  \"IT\",\n  \"LV\",\n  \"LT\",\n  \"LU\",\n  \"MT\",\n  \"NL\",\n  \"PL\",\n  \"PT\",\n  \"RO\",\n  \"SK\",\n  \"SI\",\n  \"ES\",\n  \"SE\",\n  \"NO\",\n  \"IS\",\n  \"LI\"\n];\n\nconst regions = data.regions || data.regionsEEA;\n  \n// Determine the command and the setting object\n\nconst consentApi = data.command === 'default' ? setDefaultConsentState : updateConsentState;\n\nconst settingsObject = {};\n\nif (data.ad_storage !== 'notset') settingsObject.ad_storage = data.ad_storage;\nif (data.analytics_storage !== 'notset') settingsObject.analytics_storage = data.analytics_storage;\nif (data.ad_user_data !== 'notset') settingsObject.ad_user_data = data.ad_user_data;\nif (data.ad_personalization !== 'notset') settingsObject.ad_personalization = data.ad_personalization;\nif (data.personalization_storage !== 'notset') settingsObject.personalization_storage = data.personalization_storage;\nif (data.functionality_storage !== 'notset') settingsObject.functionality_storage = data.functionality_storage;\nif (data.security_storage !== 'notset') settingsObject.security_storage = data.security_storage;\n\n\n// Settings specific to the \"default\" command\nif (data.command === 'default' && makeNumber(data.wait_for_update) > 0) {\n  settingsObject.wait_for_update = makeNumber(data.wait_for_update);\n}\n\nif (data.command === 'default' && regions !== 'all') {\n  let setRegions = regions.split(',').map(r => r.trim());\n  // Check if EEA regions are included\n  if (setRegions.indexOf('eea') > -1) {\n    setRegions = setRegions.concat(eeaRegions);\n    // Remove duplicates & eea\n    setRegions = setRegions.filter((val, idx) => setRegions.indexOf(val) === idx && val !== 'eea');\n  }\n  settingsObject.region = setRegions;\n}\n  \n// Set advanced settings\ngtagSet({\n  url_passthrough: data.url_passthrough || false,\n  ads_data_redaction: data.ads_data_redaction || false\n});\n\n// Set the consent state\nconsentApi(settingsObject);\n\nif (data.platform_microsoft) {\n  const getClarity = () => {\n    const clarity = copyFromWindow('clarity');\n    if (clarity) return clarity;\n    setInWindow('clarity', function() {\n      callInWindow('clarity.q.push', arguments);\n    });\n    createQueue('clarity.q');\n    return copyFromWindow('clarity');\n  };\n  const uetq = createQueue('uetq');\n  uetq('consent', data.command, {    \n    'ad_storage': data.ad_storage\n  });\n  const clarity = getClarity();\n  clarity('consentv2', {\n    ad_Storage: data.ad_storage,\n    analytics_Storage: data.analytics_storage\n  });\n}\n\n// Push to dataLayer if needed\nif (data.sendDataLayer) {\n  settingsObject.event = 'gtm_consent_' + data.command;\n  dataLayerPush(settingsObject);\n}\n\n// Call data.gtmOnSuccess when the tag is finished.\ndata.gtmOnSuccess();\n\n\n___WEB_PERMISSIONS___\n\n[\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"logging\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"environments\",\n          \"value\": {\n            \"type\": 1,\n            \"string\": \"debug\"\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"access_globals\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"keys\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"dataLayer\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"uetq\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"clarity\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"clarity.q\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"clarity.q.push\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"access_consent\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"consentTypes\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"ad_storage\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"analytics_storage\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"personalization_storage\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"functionality_storage\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"security_storage\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"ad_user_data\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"ad_personalization\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"write_data_layer\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"keyPatterns\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 1,\n                \"string\": \"url_passthrough\"\n              },\n              {\n                \"type\": 1,\n                \"string\": \"ads_data_redaction\"\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  }\n]\n\n\n___TESTS___\n\nscenarios:\n- name: default settings sent\n  code: |-\n    // Call runCode to run the template's code.\n    runCode(mockData);\n\n    // Verify that the tag finished successfully.\n    assertApi('setDefaultConsentState').wasCalledWith({\n      analytics_storage: 'denied',\n      ad_user_data: 'granted',\n      ad_personalization: 'denied',\n      personalization_storage: 'denied',\n      functionality_storage: 'denied',\n      security_storage: 'denied',\n      region: ['US-CA'],\n      wait_for_update: 500\n    });\n\n    assertApi('gtmOnSuccess').wasCalled();\n- name: updated settings sent\n  code: |-\n    mockData.command = 'update';\n\n    // Call runCode to run the template's code.\n    runCode(mockData);\n\n    // Verify that the tag finished successfully.\n    assertApi('updateConsentState').wasCalledWith({\n      analytics_storage: 'denied',\n      ad_user_data: 'granted',\n      ad_personalization: 'denied',\n      personalization_storage: 'denied',\n      functionality_storage: 'denied',\n      security_storage: 'denied'\n    });\n    assertApi('gtmOnSuccess').wasCalled();\n- name: extra settings sent\n  code: |-\n    mock('gtagSet', (obj) => {\n      assertThat(obj.url_passthrough).isEqualTo(true);\n      assertThat(obj.ads_data_redaction).isEqualTo(true);\n    });\n    // Call runCode to run the template's code.\n    runCode(mockData);\n\n    // Verify that the tag finished successfully.\n    assertApi('gtmOnSuccess').wasCalled();\n- name: dataLayer events generated\n  code: \"mockData.sendDataLayer = true;\\n\\nlet dlCalled = false;\\n\\nmock('createQueue',\\\n    \\ name => {\\n  return o => {\\n    if (o.event === 'gtm_consent_default' && \\n\\\n    \\        o.analytics_storage === 'denied' && \\n        o.ad_user_data === 'granted'\\\n    \\ &&\\n        o.ad_personalization === 'denied' &&\\n        o.personalization_storage\\\n    \\ === 'denied' &&\\n        o.functionality_storage === 'denied' &&\\n        o.security_storage\\\n    \\ === 'denied' &&\\n        o.region[0] === 'US-CA') dlCalled = true;\\n    \\n \\\n    \\ };\\n});\\n    \\n// Call runCode to run the template's code.\\nrunCode(mockData);\\n\\\n    \\n// Verify that the tag finished successfully.\\nassertApi('gtmOnSuccess').wasCalled();\\n\\\n    assertThat(dlCalled, 'dataLayer not called with correct arguments').isEqualTo(true);\"\nsetup: |-\n  const mockData = {\n    platform_google: true,\n    platform_microsoft: true,\n    command: 'default',\n    ad_storage: 'notset',\n    analytics_storage: 'denied',\n    ad_user_data: 'granted',\n    ad_personalization: 'denied',\n    personalization_storage: 'denied',\n    functionality_storage: 'denied',\n    security_storage: 'denied',\n    wait_for_update: 500,\n    regions: 'US-CA',\n    url_passthrough: true,\n    ads_data_redaction: true,\n    sendDataLayer: false,\n  };\n\n\n___NOTES___\n\nCreated on 13/08/2024, 15:40:09\n\n\n",
+                "galleryReference": {
+                    "host": "github.com",
+                    "owner": "gtm-templates-simo-ahava",
+                    "repository": "consent-mode",
+                    "version": "8dea5c367947d07b21b71105ef9960c5125a9137",
+                    "signature": "6504471a6fc804a0acbd2b43473cfb58917e37ac00141260bd8cc690be0ead53",
+                    "galleryTemplateId": "K8GSG"
+                }
+            },
+            {
+                "accountId": "122891826",
+                "containerId": "10430067",
+                "templateId": "120",
+                "name": "OneTrust Consent Groups",
+                "fingerprint": "1708532833083",
+                "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"MACRO\",\n  \"id\": \"cvt_temp_public_id\",\n  \"version\": 1,\n  \"securityGroups\": [],\n  \"displayName\": \"OneTrust Consent Groups\",\n  \"categories\": [\n    \"ADVERTISING\",\n    \"ANALYTICS\",\n    \"MARKETING\"\n  ],\n  \"description\": \"Returns the OneTrust (Optanon) consent groups. Can be used with setting up triggers for tags.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ],\n  \"brand\": {\n    \"displayName\": \"taneli-salonen1\",\n    \"id\": \"github.com_taneli-salonen1\"\n  }\n}\n\n\n___TEMPLATE_PARAMETERS___\n\n[\n  {\n    \"type\": \"LABEL\",\n    \"name\": \"label1\",\n    \"displayName\": \"This variable returns the consent groups accepted by the visitor to be used with tag triggers, for example.\"\n  },\n  {\n    \"type\": \"RADIO\",\n    \"name\": \"returnType\",\n    \"displayName\": \"Return type\",\n    \"radioItems\": [\n      {\n        \"value\": \"all\",\n        \"displayValue\": \"All consent groups\"\n      },\n      {\n        \"value\": \"selected\",\n        \"displayValue\": \"Selected consent group\\u0027s status\",\n        \"subParams\": [\n          {\n            \"type\": \"TEXT\",\n            \"name\": \"selectedGroup\",\n            \"displayName\": \"Selected individual group\",\n            \"simpleValueType\": true,\n            \"help\": \"For example \\\"C0002\\\"\"\n          },\n          {\n            \"type\": \"RADIO\",\n            \"name\": \"individualConsentOutput\",\n            \"displayName\": \"Return consent group status as\",\n            \"radioItems\": [\n              {\n                \"value\": \"true_false\",\n                \"displayValue\": \"\\\"false\\\" / \\\"true\\\"\",\n                \"help\": \"Default \\\"true\\\" or \\\"false\\\"\"\n              },\n              {\n                \"value\": \"consent_mode\",\n                \"displayValue\": \"\\\"denied\\\" / \\\"granted\\\"\",\n                \"help\": \"GTM Consent Mode format\"\n              }\n            ],\n            \"simpleValueType\": true\n          }\n        ],\n        \"help\": \"Select an individual consent group to return its status as \\\"true\\\" or \\\"false\\\".\"\n      }\n    ],\n    \"simpleValueType\": true,\n    \"help\": \"Return either a list of all consent groups with their statuses or the status of an individual group. Default all.\",\n    \"defaultValue\": \"all\"\n  },\n  {\n    \"type\": \"RADIO\",\n    \"name\": \"outputType\",\n    \"displayName\": \"Variable Output Type\",\n    \"radioItems\": [\n      {\n        \"value\": \"string\",\n        \"displayValue\": \"String\"\n      },\n      {\n        \"value\": \"array\",\n        \"displayValue\": \"Array\"\n      }\n    ],\n    \"simpleValueType\": true,\n    \"help\": \"The output of the variable is a list of accepted consent groups. It can be returned either as a JS array or a comma joined string.\",\n    \"enablingConditions\": [\n      {\n        \"paramName\": \"returnType\",\n        \"paramValue\": \"all\",\n        \"type\": \"EQUALS\"\n      }\n    ]\n  },\n  {\n    \"type\": \"SIMPLE_TABLE\",\n    \"name\": \"defaultGroups\",\n    \"displayName\": \"Default Groups\",\n    \"simpleTableColumns\": [\n      {\n        \"defaultValue\": \"\",\n        \"displayName\": \"Group\",\n        \"name\": \"group\",\n        \"type\": \"TEXT\"\n      }\n    ],\n    \"newRowButtonText\": \"Add default group\",\n    \"alwaysInSummary\": true,\n    \"help\": \"Allows you to declare default groups which are on by default for new visitors. These are returned when there is no data yet in the dataLayer or in the cookie.\\n\\nAdd \\\"C0001\\\", for example, to set group C0001 to be allowed by default.\"\n  }\n]\n\n\n___SANDBOXED_JS_FOR_WEB_TEMPLATE___\n\n/*\nThis template returns the consent groups that the visitor has selected.\nIt reads the cookie (OptanonConsent) set by OneTrust and also checks the dataLayer messages.\nThere is also a possibility to set default consent groups for situation where the dataLayer\nor cookie information is not yet available.\n\nTemplate by Taneli Salonen.\n*/\n\nconst log = require('logToConsole');\nconst getCookieValues = require('getCookieValues');\nconst copyFromDataLayer = require('copyFromDataLayer');\nconst copyFromWindow = require('copyFromWindow');\n\n// return the value based on the selections in the template\nfunction returnVariableValue(value) {\n  const individualConsentReturnVal = {\n    'true': data.individualConsentOutput === 'consent_mode' ? 'granted' : 'true',\n    'false': data.individualConsentOutput === 'consent_mode' ? 'denied' : 'false'\n  };\n  \n  // return only the selected groups status\n  if (data.returnType === 'selected') {\n    return value.filter(v => {\n      return v.split(':')[0] === data.selectedGroup;\n    }).length > 0 ? individualConsentReturnVal['true'] : individualConsentReturnVal['false'];\n  }\n  \n  // return the full list as a string\n  if (data.outputType === 'string') {\n    return value.join(',');\n  }\n  \n  // return the full list as an array\n  return value;\n}\n\n// first, try to access the values from the dataLayer or global variables\nconst consentDataLayerOrGlobal = copyFromWindow('OnetrustActiveGroups') || copyFromWindow('OptanonActiveGroups') || copyFromDataLayer('OnetrustActiveGroups') || copyFromDataLayer('OptanonActiveGroups');\nif (typeof consentDataLayerOrGlobal === 'string' && consentDataLayerOrGlobal.length > 0) {\n  \n  const consentGroups = consentDataLayerOrGlobal.split(',').filter(function(group) {\n    return group.length > 0;\n  }).map(function(group) {\n    return group + ':1';\n  });\n  \n  // onetrust datalayer can return strings like \",,\"\n  if (consentGroups.length > 0) {\n    return returnVariableValue(consentGroups);\n  }\n}\n\n// if dataLayer is not available, check the OptanonConsent cookie for consent groups and other consent information\nconst consentCookie = getCookieValues('OptanonConsent', true)[0];\nif (typeof consentCookie === 'string' && consentCookie.indexOf('groups=') > -1) {\n  const groupsPart = consentCookie.split(\"&\").filter(function(keyval) {\n    // All of these are used to store consent information\n    return keyval.indexOf(\"groups=\") === 0 || keyval.indexOf(\"genVendors=\") === 0 || keyval.indexOf(\"hosts=\") === 0;\n  });\n  \n  if (groupsPart.length > 0) {\n    // join all consent data into one string\n    const allGroups = groupsPart.map(part => {\n      const groupData = part.split(\"=\");\n      return groupData[1] ? groupData[1] : '';\n    }).join(',');\n    \n    const consentGroupsArr = allGroups ? allGroups.split(\",\") : null;\n\n    if (consentGroupsArr) {\n      const consentGroups = consentGroupsArr.filter(function(group) {\n         return group.split(':')[1] === '1';\n      });\n      if (consentGroups.length > 0) {\n        return returnVariableValue(consentGroups);\n      }\n    }\n  }\n}\n\n// as a fallback, if neither the cookie nor dataLayer exist, return default consent groups listed in the template\n// this can be the case when a new visitor has entered the site and OneTrust hasn't yet pushed the dataLayer message\nconst defaultGroups = data.defaultGroups;\nif (defaultGroups && defaultGroups.length > 0) {\n  const consentGroups = defaultGroups.map(function(group) {\n    return group.group.split(':')[0] + ':1';\n  });\n  return returnVariableValue(consentGroups);\n}\n\nreturn returnVariableValue([]);\n\n\n___WEB_PERMISSIONS___\n\n[\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"logging\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"environments\",\n          \"value\": {\n            \"type\": 1,\n            \"string\": \"debug\"\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"get_cookies\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"cookieAccess\",\n          \"value\": {\n            \"type\": 1,\n            \"string\": \"specific\"\n          }\n        },\n        {\n          \"key\": \"cookieNames\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 1,\n                \"string\": \"OptanonConsent\"\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"read_data_layer\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"allowedKeys\",\n          \"value\": {\n            \"type\": 1,\n            \"string\": \"specific\"\n          }\n        },\n        {\n          \"key\": \"keyPatterns\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 1,\n                \"string\": \"OptanonActiveGroups\"\n              },\n              {\n                \"type\": 1,\n                \"string\": \"OnetrustActiveGroups\"\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"access_globals\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"keys\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"OptanonActiveGroups\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"OnetrustActiveGroups\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  }\n                ]\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  }\n]\n\n\n___TESTS___\n\nscenarios:\n- name: global variable is available\n  code: |-\n    const mockData = {\n      outputType: 'string'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromWindow', (varName) => {\n      return \",1,2,3\";\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = \"1:1,2:1,3:1\";\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: dataLayer is available\n  code: |-\n    const mockData = {\n      outputType: 'string'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromDataLayer', (dlName) => {\n      return \",1,2,3\";\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = \"1:1,2:1,3:1\";\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: cookie data available, no global variable\n  code: |-\n    const mockData = {\n      outputType: 'string'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromWindow', (varName) => {\n      return undefined;\n    });\n\n    mock('getCookieValues', (cookieName, decode) => {\n      return ['isIABGlobal=false&datestamp=Mon+Aug+09+2021+08:27:26+GMT+0300+(Eastern+European+Summer+Time)&version=6.21.0&landingPath=NotLandingPage&groups=1:1,2:1'];\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = \"1:1,2:1\";\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: cookie data available, no dataLayer\n  code: |-\n    const mockData = {\n      outputType: 'string'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromDataLayer', (dlName) => {\n      return undefined;\n    });\n\n    mock('getCookieValues', (cookieName, decode) => {\n      return ['isIABGlobal=false&datestamp=Mon+Aug+09+2021+08:27:26+GMT+0300+(Eastern+European+Summer+Time)&version=6.21.0&landingPath=NotLandingPage&groups=1:1,2:1'];\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = \"1:1,2:1\";\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: no global variable, no dl, no cookie, only default fallback\n  code: |-\n    const mockData = {\n      outputType: 'string',\n      defaultGroups: [{group: '1'}]\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromWindow', (varName) => {\n      return undefined;\n    });\n\n    mock('copyFromDataLayer', (dlName) => {\n      return undefined;\n    });\n\n    mock('getCookieValues', (cookieName, decode) => {\n      return [];\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = \"1:1\";\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: no global variable, no dl, no cookie, no default fallback\n  code: |-\n    const mockData = {\n      outputType: 'string'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromWindow', (varName) => {\n      return undefined;\n    });\n\n    mock('copyFromDataLayer', (dlName) => {\n      return undefined;\n    });\n\n    mock('getCookieValues', (cookieName, decode) => {\n      return [];\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = \"\";\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: dl with empty values, cookie available\n  code: |-\n    const mockData = {\n      outputType: 'string'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromDataLayer', (dlName) => {\n      return \",,\";\n    });\n\n    mock('getCookieValues', (cookieName, decode) => {\n      return ['isIABGlobal=false&datestamp=Mon+Aug+09+2021+08:27:26+GMT+0300+(Eastern+European+Summer+Time)&version=6.21.0&landingPath=NotLandingPage&groups=1:1,2:1'];\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = \"1:1,2:1\";\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: global variable with empty values, cookie available\n  code: |-\n    const mockData = {\n      outputType: 'string'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromWindow', (varName) => {\n      return \",,\";\n    });\n\n    mock('getCookieValues', (cookieName, decode) => {\n      return ['isIABGlobal=false&datestamp=Mon+Aug+09+2021+08:27:26+GMT+0300+(Eastern+European+Summer+Time)&version=6.21.0&landingPath=NotLandingPage&groups=1:1,2:1'];\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = \"1:1,2:1\";\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: return only the selected groups status\n  code: |-\n    const mockData = {\n      outputType: 'string',\n      returnType: 'selected',\n      selectedGroup: 'C0002'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromDataLayer', (dlName) => {\n      return \",C0001,C0005,C0002,C0004,C0003,\";\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = \"true\";\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: cookie data available, no dataLayer, return an array\n  code: |-\n    const mockData = {\n      outputType: 'array'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromDataLayer', (dlName) => {\n      return undefined;\n    });\n\n    mock('getCookieValues', (cookieName, decode) => {\n      return ['isIABGlobal=false&datestamp=Mon+Aug+09+2021+08:27:26+GMT+0300+(Eastern+European+Summer+Time)&version=6.21.0&landingPath=NotLandingPage&groups=1:1,2:1'];\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = [\"1:1\",\"2:1\"];\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: cookie data available, no global variable, return an array\n  code: |-\n    const mockData = {\n      outputType: 'array'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromWindow', (varName) => {\n      return undefined;\n    });\n\n    mock('getCookieValues', (cookieName, decode) => {\n      return ['isIABGlobal=false&datestamp=Mon+Aug+09+2021+08:27:26+GMT+0300+(Eastern+European+Summer+Time)&version=6.21.0&landingPath=NotLandingPage&groups=1:1,2:1'];\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = [\"1:1\",\"2:1\"];\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: OnetrustActiveGroups dataLayer\n  code: |-\n    const mockData = {\n      outputType: 'string'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromDataLayer', (dlName) => {\n      if (dlName === 'OnetrustActiveGroups') {\n        return \",1,2,3\";\n      }\n      return undefined;\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = \"1:1,2:1,3:1\";\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\n- name: OnetrustActiveGroups global variable\n  code: |-\n    const mockData = {\n      outputType: 'string'\n    };\n\n    const log = require('logToConsole');\n\n    mock('copyFromWindow', (varName) => {\n      if (varName === 'OnetrustActiveGroups') {\n        return \",1,2,3\";\n      }\n      return undefined;\n    });\n\n    // Call runCode to run the template's code.\n    let variableResult = runCode(mockData);\n\n    log(variableResult);\n\n    const expectedResult = \"1:1,2:1,3:1\";\n\n    // Verify that the variable result is as expected\n    assertThat(variableResult).isEqualTo(expectedResult);\nsetup: ''\n\n\n___NOTES___\n\nCreated on 8/9/2021, 10:17:29 AM\n\n\n",
+                "galleryReference": {
+                    "host": "github.com",
+                    "owner": "taneli-salonen1",
+                    "repository": "gtm-onetrust-consent-groups",
+                    "version": "4804c2880e9c8bd26ddd3c2b34e3d6f3b8db7e36",
+                    "signature": "95d13a88ec12344c93bb14ebbd9b21b0d18bad0889c4379418be788683924230"
+                }
+            }
+        ]
+    }
+}

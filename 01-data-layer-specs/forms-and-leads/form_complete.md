@@ -19,14 +19,14 @@ dataLayer.push({
   },
    "user_data": [{
     "sha256_first_name": "<hashed_user_first_name>",
-    "sha256__last_name": "<hashed_user_last_name>",
+    "sha256_last_name": "<hashed_user_last_name>",
     "sha256_user_email": "<hashed_user_email>",
     "sha256_user_phone_number": "<hashed_user_phone_number>",
     "sha256_street": "<hashed_street>",
-    "city": "<city>",
-    "region": "<region>",
-    "postal_code": "<postal_code>",
-    "country": "country>"
+    "sha256_city": "<hashed_city>",
+    "sha256_region": "<hashed_region>",
+    "sha256_postal_code": "<hashed_postal_code>",
+    "sha256_country": "<hashed_country>"
   }]
 });
 
@@ -41,7 +41,7 @@ dataLayer.push({
 |name|string|required|The form human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the form with. It should be lowercase snake_case.|caregiver_1078_application|||||||
 |user_data|array|required|An array containing user-provided data for enhanced conversions. Each object in the array represents a user.||||||||
 |user_data.sha256_first_name|string|recommended|SHA-256 hashed value of the user's first name.||||||||
-|user_data.sha256__last_name|string|recommended|SHA-256 hashed value of the user's last name.||||||||
+|user_data.sha256_last_name|string|recommended|SHA-256 hashed value of the user's last name.||||||||
 |user_data.sha256_user_email|string|recommended|SHA-256 hashed value of the user's email address.||||||||
 |user_data.sha256_user_phone_number|string|recommended|SHA-256 hashed value of the user's phone number (should be in E.164 format before hashing).||||||||
 |user_data.sha256_street|string|recommended|SHA-256 hashed value of the user's street address.||||||||

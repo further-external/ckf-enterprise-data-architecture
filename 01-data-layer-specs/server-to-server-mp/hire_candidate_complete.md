@@ -22,19 +22,17 @@ Content-Type: application/json
 {
   "client_id": "<client_id>",
   "timestamp_micros": "<timestamp_micros>",
-  "user_data": {
-    "address": {
-      "sha256_first_name": "<hashed_first_name>",
-      "sha256_last_name": "<hashed_last_name>",
-      "sha256_street": "<hashed_street>",
-      "city": "<normalized_city>",
-      "region": "<normalized_region>",
-      "postal_code": "<normalized_postal_code>",
-      "country": "<normalized_country_code>"
-    },
-    "sha256_email_address": ["<hashed_email>"],
-    "sha256_phone_number": ["<hashed_phone_number>"]
-  },
+  "user_data": [{
+    "sha256_first_name": "<hashed_first_name>",
+    "sha256_last_name": "<hashed_last_name>",
+    "sha256_user_email": "<hashed_user_email>",
+    "sha256_user_phone_number": "<hashed_user_phone_number>",
+    "sha256_street": "<hashed_street>",
+    "sha256_city": "<hashed_city>",
+    "sha256_region": "<hashed_region>",
+    "sha256_postal_code": "<hashed_postal_code>",
+    "sha256_country": "<hashed_country>"
+  }],
   "events": [
     {
       "name": "hire_candidate_complete",
@@ -62,15 +60,16 @@ Content-Type: application/json
 | `measurement_id` | string | **Required** | GA4 data stream measurement ID. Found in GA4 Admin > Data Streams. | `G-XXXXXXXXXX` |
 | `client_id` | string | **Required** | GA4 client_id from the candidate's browser session. Must be captured during the web session and persisted through the entire Paradox candidate lifecycle. | `141853617.1775570691` |
 | `timestamp_micros` | string | **Required** | Event timestamp in Unix epoch microseconds. Derived from Paradox `candidate.updated_at`. See timestamp considerations below. | `1712502581939103` |
-| `user_data.address.sha256_first_name` | string | Recommended | SHA-256 hashed first name. Source: `candidate.attributes.first_name`. | `<hashed_value>` |
-| `user_data.address.sha256_last_name` | string | Recommended | SHA-256 hashed last name. Source: `candidate.attributes.last_name`. | `<hashed_value>` |
-| `user_data.address.sha256_street` | string | Recommended | SHA-256 hashed street address. Source: `candidate.attributes.address`. | `<hashed_value>` |
-| `user_data.address.city` | string | Recommended | **Unhashed** city, normalized. Source: `candidate.attributes.city`. | `woodbridge` |
-| `user_data.address.region` | string | Recommended | **Unhashed** state/region, normalized. Source: `candidate.attributes.state`. | `va` |
-| `user_data.address.postal_code` | string | Recommended | **Unhashed** postal code. Source: `candidate.attributes.zip_code`. | `22191` |
-| `user_data.address.country` | string | Recommended | **Unhashed** two-letter ISO country code. Default to `us` for CKF. | `us` |
-| `user_data.sha256_email_address` | array | Recommended | Array with SHA-256 hashed email. Source: `candidate.email`. | `["<hashed_value>"]` |
-| `user_data.sha256_phone_number` | array | Recommended | Array with SHA-256 hashed phone (E.164 format). Source: `candidate.phone`. | `["<hashed_value>"]` |
+| `user_data` | array | **Required** | Array containing user-provided data for enhanced conversions. | |
+| `user_data.sha256_first_name` | string | Recommended | SHA-256 hashed first name. Source: `candidate.attributes.first_name`. | `<hashed_value>` |
+| `user_data.sha256_last_name` | string | Recommended | SHA-256 hashed last name. Source: `candidate.attributes.last_name`. | `<hashed_value>` |
+| `user_data.sha256_user_email` | string | Recommended | SHA-256 hashed email. Source: `candidate.email`. Lowercase and trim before hashing. | `<hashed_value>` |
+| `user_data.sha256_user_phone_number` | string | Recommended | SHA-256 hashed phone (E.164 format before hashing). Source: `candidate.phone`. | `<hashed_value>` |
+| `user_data.sha256_street` | string | Recommended | SHA-256 hashed street address. Source: `candidate.attributes.address`. | `<hashed_value>` |
+| `user_data.sha256_city` | string | Recommended | SHA-256 hashed city. Source: `candidate.attributes.city`. Lowercase and trim before hashing. | `<hashed_value>` |
+| `user_data.sha256_region` | string | Recommended | SHA-256 hashed state/region. Source: `candidate.attributes.state`. Lowercase and trim before hashing. | `<hashed_value>` |
+| `user_data.sha256_postal_code` | string | Recommended | SHA-256 hashed postal code. Source: `candidate.attributes.zip_code`. | `<hashed_value>` |
+| `user_data.sha256_country` | string | Recommended | SHA-256 hashed country. Default to "us" for CKF. Lowercase before hashing. | `<hashed_value>` |
 | `events[].name` | string | **Required** | GA4 event name. Always `hire_candidate_complete`. | `hire_candidate_complete` |
 | `events[].params.detailed_event` | string | **Required** | Descriptive event label for reporting. | `Hire Candidate Complete` |
 | `events[].params.job_req_id` | string | **Required** | Paradox job requisition ID. Source: `candidate.job_req_id`. | `PDX_CK_9420A59C-6944-46AB-92CE-FE29D876B626` |
@@ -94,7 +93,7 @@ Same as other Paradox events. The `client_id` from the original browser session 
 The `user_data` object must be at the **top level** of the payload (same level as `client_id`), NOT inside `events[].params`.
 
 ### Hashing Requirements
-All PII fields in `user_data` must be trimmed, lowercased, and hashed with SHA-256. Phone numbers normalized to E.164 before hashing. Address fields (`city`, `region`, `postal_code`, `country`) are sent **unhashed** per Google's spec.
+All fields in `user_data` must be trimmed, lowercased, and hashed with SHA-256 (including city, region, postal_code, country — consistent with client-side dataLayer specs). Phone numbers must be normalized to E.164 format before hashing.
 
 ### Pending Confirmation
 This spec requires validation against the actual Paradox webhook payload for the hire event. Key items to confirm:

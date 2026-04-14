@@ -4,8 +4,8 @@ Fire when a lead successfully converts into a franchisee, corresponding to the "
 
 
 ## Request info
-POST /mp/collect?api_secret="insert_secret_key"&measurement_id=G-3BQ5YPKFRC HTTP/1.1   
-HOST: www.google-analytics.com
+POST /mp/collect?api_secret=<API_SECRET>&measurement_id=<MEASUREMENT_ID> HTTP/1.1   
+HOST: analytics.comfortkeepersfranchise.com
 Content-Type: application/json
 
 ##Payload
@@ -15,19 +15,17 @@ Content-Type: application/json
   "client_id": "<client_id>",
   "user_id": "<hashed_email_as_user_id>", //Planned for phase 2
   "timestamp_micros": "<timestamp_micros>",
-  "user_data": {
-    "address": {
-      "sha256_first_name": "<hashed_user_first_name>",
-      "sha256_last_name": "<hashed_user_last_name>",
-      "sha256_street": "<hashed_street>",
-      "city": "<normalized_city>",
-      "region": "<normalized_region>",
-      "postal_code": "<normalized_postal_code>",
-      "country": "<normalized_country_code>"
-    },
-    "sha256_email_address": ["<hashed_user_email>"],
-    "sha256_phone_number": ["<hashed_user_phone_number>"]
-  },
+  "user_data": [{
+    "sha256_first_name": "<hashed_first_name>",
+    "sha256_last_name": "<hashed_last_name>",
+    "sha256_user_email": "<hashed_user_email>",
+    "sha256_user_phone_number": "<hashed_user_phone_number>",
+    "sha256_street": "<hashed_street>",
+    "sha256_city": "<hashed_city>",
+    "sha256_region": "<hashed_region>",
+    "sha256_postal_code": "<hashed_postal_code>",
+    "sha256_country": "<hashed_country>"
+  }],
   "events": [
     {
       "name": "close_convert_lead",
@@ -40,7 +38,8 @@ Content-Type: application/json
         "utm_medium": "<stored_utm_medium>", //For campaign Attribution
         "utm_campaign": "<stored_utm_campaign>", //For campaign Attribution
         "gclid": "<stored_gclid>", //For campaign Attribution
-        "detailed_event": "Franconnect Close Convert Lead"
+        "detailed_event": "Franconnect Close Convert Lead",
+        "engagement_time_msec": 1
       }
     }
   ]
@@ -61,15 +60,16 @@ Content-Type: application/json
 | `events[].params.franconnect_lead_id`     | string | Recommended   | (Custom) Hashed unique identifier for the lead in Franconnect. Useful for analysis.                                                   | `<hashed_franconnect_lead_id>`    |
 | `events[].params.conversion_timestamp`    | string | Recommended   | (Custom) Timestamp in Unix epoch microseconds when the lead was converted/awarded.                                                    | `1679232000000`                   |
 | `events[].params.detailed_event`          | string | Optional      | (Custom) A descriptive name for easily identifying the event source in GA4.                                                           | `Franconnect Close Convert Lead`  |
-| `user_data.address.sha256_first_name`     | string | Recommended   | SHA-256 Hashed first name of the user.                                                                                                | `<hashed_value>`                  |
-| `user_data.address.sha256_last_name`      | string | Recommended   | SHA-256 Hashed last name of the user.                                                                                                 | `<hashed_value>`                  |
-| `user_data.address.sha256_street`         | string | Recommended   | SHA-256 Hashed street address of the user.                                                                                            | `<hashed_value>`                  |
-| `user_data.address.city`                  | string | Recommended   | **Unhashed** city of the user, normalized (e.g., lowercase, no punctuation).                                                          | `new york`                        |
-| `user_data.address.region`                | string | Recommended   | **Unhashed** state/region of the user, normalized (e.g., 'ny' for New York).                                                          | `ny`                              |
-| `user_data.address.postal_code`           | string | Recommended   | **Unhashed** postal code of the user.                                                                                                 | `10011`                           |
-| `user_data.address.country`               | string | Recommended   | **Unhashed** two-letter ISO country code of the user.                                                                                 | `us`                              |
-| `user_data.sha256_email_address`          | array  | Recommended   | Array containing the SHA-256 Hashed email address of the user.                                                                        | `["<hashed_email>"]`              |
-| `user_data.sha256_phone_number`           | array  | Recommended   | Array containing the SHA-256 Hashed phone number of the user (normalized to E.164 format before hashing).                             | `["<hashed_phone_number>"]`       |
+| `user_data.sha256_first_name`             | string | Recommended   | SHA-256 hashed first name. Lowercase and trim before hashing.                                                                         | `<hashed_value>`                  |
+| `user_data.sha256_last_name`              | string | Recommended   | SHA-256 hashed last name. Lowercase and trim before hashing.                                                                          | `<hashed_value>`                  |
+| `user_data.sha256_user_email`             | string | Recommended   | SHA-256 hashed email. Lowercase and trim before hashing.                                                                              | `<hashed_value>`                  |
+| `user_data.sha256_user_phone_number`      | string | Recommended   | SHA-256 hashed phone (E.164 format before hashing).                                                                                   | `<hashed_value>`                  |
+| `user_data.sha256_street`                 | string | Recommended   | SHA-256 hashed street address.                                                                                                        | `<hashed_value>`                  |
+| `user_data.sha256_city`                   | string | Recommended   | SHA-256 hashed city. Lowercase and trim before hashing.                                                                               | `<hashed_value>`                  |
+| `user_data.sha256_region`                 | string | Recommended   | SHA-256 hashed state/region. Lowercase and trim before hashing.                                                                       | `<hashed_value>`                  |
+| `user_data.sha256_postal_code`            | string | Recommended   | SHA-256 hashed postal code.                                                                                                           | `<hashed_value>`                  |
+| `user_data.sha256_country`                | string | Recommended   | SHA-256 hashed country. Default to "us". Lowercase before hashing.                                                                    | `<hashed_value>`                  |
+| `events[].params.engagement_time_msec`    | number | **Required**  | Must be > 0 for GA4. Use `1` for server-side events.                                                                                  | `1`                               |
 
 
 

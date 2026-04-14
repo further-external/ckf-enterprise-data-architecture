@@ -10,7 +10,7 @@ Fire when a candidate successfully completes the job application (Caregiver form
 
 ```
 POST /mp/collect?api_secret=<API_SECRET>&measurement_id=<MEASUREMENT_ID> HTTP/1.1
-HOST: www.google-analytics.com
+HOST: analytics.comfortkeepers.jobs
 Content-Type: application/json
 ```
 

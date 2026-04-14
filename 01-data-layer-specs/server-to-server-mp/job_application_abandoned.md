@@ -10,7 +10,7 @@ Fire when a candidate starts but does not complete the job application through t
 
 ```
 POST /mp/collect?api_secret=<API_SECRET>&measurement_id=<MEASUREMENT_ID> HTTP/1.1
-HOST: www.google-analytics.com
+HOST: analytics.comfortkeepers.jobs
 Content-Type: application/json
 ```
 

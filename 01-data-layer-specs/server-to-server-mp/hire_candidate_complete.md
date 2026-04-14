@@ -12,7 +12,7 @@ Fire when a candidate's hiring process is complete and they have been officially
 
 ```
 POST /mp/collect?api_secret=<API_SECRET>&measurement_id=<MEASUREMENT_ID> HTTP/1.1
-HOST: www.google-analytics.com
+HOST: analytics.comfortkeepers.jobs
 Content-Type: application/json
 ```
 
